@@ -1,0 +1,124 @@
+{{#if theme_settings.show_usp '!=' 0}}
+  <div class="usp-section m-b-60 {{#if theme_settings.show_usp '==' 0}}usp-section-none{{/if}}">
+    <div class="container">
+      <ul>
+        {{#if theme_settings.show_usp '>=' 1}}
+          <li class="{{#if theme_settings.show_usp '>=' 1}}first{{/if}}">
+            <div class="usp-block">
+
+              {{#if theme_settings.selected-icon1 '!=' ''}}
+                {{#if theme_settings.selected-icon1 '==' 'SelectOne'}}
+                  {{#if theme_settings.UspImageFirst '!=' ''}}
+                    <div class="usp-img">
+                      <img src="/product_images/uploaded_images/{{theme_settings.UspImageFirst}}" alt="">
+                    </div>
+                  {{/if}}
+                  {{else}}
+                    <div class="usp-img">
+                        <img src="{{cdn 'assets/img/usp-icon/'}}{{theme_settings.selected-icon1}}.png" alt="">
+                    </div>
+                {{/if}}
+              {{/if}}
+
+              <div class="usp-detail">
+                {{#if theme_settings.UspTitleFirst}}
+                  <h5>{{theme_settings.UspTitleFirst}}</h5>
+                {{/if}}
+                {{#if theme_settings.UspTextFirst}}
+                  <p>{{theme_settings.UspTextFirst}}</p>
+                {{/if}}
+              </div>
+            </div>
+          </li>
+        {{/if}}
+        {{#if theme_settings.show_usp '>=' 2}}
+          <li class="{{#if theme_settings.show_usp '>=' 2}}second{{/if}}">
+            <div class="usp-block">
+
+              {{#if theme_settings.selected-icon2 '!=' ''}}
+                {{#if theme_settings.selected-icon2 '==' 'SelectOne'}}
+                  {{#if theme_settings.UspImageSecond '!=' ''}}
+                    <div class="usp-img">
+                      <img src="/product_images/uploaded_images/{{theme_settings.UspImageSecond}}" alt="">
+                    </div>
+                  {{/if}}
+                  {{else}}
+                    <div class="usp-img">
+                        <img src="{{cdn 'assets/img/usp-icon/'}}{{theme_settings.selected-icon2}}.png" alt="">
+                    </div>
+                {{/if}}
+              {{/if}}
+
+              <div class="usp-detail">
+                {{#if theme_settings.UspTitleSecond}}
+                  <h5>{{theme_settings.UspTitleSecond}}</h5>
+                {{/if}}
+                {{#if theme_settings.UspTextSecond}}
+                  <p>{{theme_settings.UspTextSecond}}</p>
+                {{/if}}
+              </div>
+            </div>
+          </li>
+        {{/if}}
+        {{#if theme_settings.show_usp '>=' 3}}
+        <li class="{{#if theme_settings.show_usp '>=' 3}}third{{/if}}">
+          <div class="usp-block">
+
+            {{#if theme_settings.selected-icon3 '!=' ''}}
+              {{#if theme_settings.selected-icon3 '==' 'SelectOne'}}
+                {{#if theme_settings.UspImageThird '!=' ''}}
+                  <div class="usp-img">
+                    <img src="/product_images/uploaded_images/{{theme_settings.UspImageThird}}" alt="">
+                  </div>
+                {{/if}}
+                {{else}}
+                  <div class="usp-img">
+                      <img src="{{cdn 'assets/img/usp-icon/'}}{{theme_settings.selected-icon3}}.png" alt="">
+                  </div>
+              {{/if}}
+            {{/if}}
+
+            <div class="usp-detail">
+              {{#if theme_settings.UspTitleThird}}
+                <h5>{{theme_settings.UspTitleThird}}</h5>
+              {{/if}}
+              {{#if theme_settings.UspTextThird}}
+                <p>{{theme_settings.UspTextThird}}</p>
+              {{/if}}
+            </div>
+          </div>
+        </li>
+        {{/if}}
+        {{#if theme_settings.show_usp '>=' 4}}
+          <li class="{{#if theme_settings.show_usp '>=' 4}}fourth{{/if}}">
+            <div class="usp-block">
+
+              {{#if theme_settings.selected-icon4 '!=' ''}}
+                {{#if theme_settings.selected-icon4 '==' 'SelectOne'}}
+                  {{#if theme_settings.UspImageFour '!=' ''}}
+                    <div class="usp-img">
+                      <img src="/product_images/uploaded_images/{{theme_settings.UspImageFour}}" alt="">
+                    </div>
+                  {{/if}}
+                  {{else}}
+                    <div class="usp-img">
+                        <img src="{{cdn 'assets/img/usp-icon/'}}{{theme_settings.selected-icon4}}.png" alt="">
+                    </div>
+                {{/if}}
+              {{/if}}
+
+              <div class="usp-detail">
+                {{#if theme_settings.UspTitleFour}}
+                  <h5>{{theme_settings.UspTitleFour}}</h5>
+                {{/if}}
+                {{#if theme_settings.UspTextFour}}
+                  <p>{{theme_settings.UspTextFour}}</p>
+                {{/if}}
+              </div>
+            </div>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+{{/if}}

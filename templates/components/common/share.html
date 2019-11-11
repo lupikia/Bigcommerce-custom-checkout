@@ -1,0 +1,90 @@
+{{#if settings.add_this.buttons}}
+    <div class="addthis_toolbox addthis_32x32_style" addthis:url="{{url}}"
+         addthis:title="{{title}}">
+        <ul class="socialLinks">
+            {{#each settings.add_this.buttons}}
+                <li class="socialLinks-item socialLinks-item--{{service}}">
+                    <a class="addthis_button_{{service}} icon icon--{{service}}" {{{annotation}}}>
+                        {{#if service '===' 'google_plusone'}}
+                            <!-- No custom icons allowed with g+ -->
+                            <svg>
+                                <use xlink:href="#icon-google"/>
+                            </svg>
+                        {{/if}}
+
+                        {{#if service '===' 'facebook'}}
+                            <svg>
+                                <use xlink:href="#icon-facebook"/>
+                            </svg>
+                        {{/if}}
+
+                        {{#if service '===' 'email'}}
+                            <svg>
+                                <use xlink:href="#icon-envelope"/>
+                            </svg>
+                        {{/if}}
+
+                        {{#if service '===' 'print'}}
+                            <svg>
+                                <use xlink:href="#icon-print"/>
+                            </svg>
+                        {{/if}}
+
+                        {{#if service '===' 'twitter'}}
+                            <svg>
+                                <use xlink:href="#icon-twitter"/>
+                            </svg>
+                        {{/if}}
+
+                        {{#if service '===' 'linkedin'}}
+                            <svg>
+                                <use xlink:href="#icon-linkedin"/>
+                            </svg>
+                        {{/if}}
+
+                        {{#if service '===' 'google'}}
+                            <svg>
+                                <use xlink:href="#icon-google"/>
+                            </svg>
+                        {{/if}}
+
+                        {{#if service '===' 'pinterest'}}
+                            <svg>
+                                <use xlink:href="#icon-pinterest"/>
+                            </svg>
+                        {{/if}}
+
+                        {{#if service '===' 'facebook_like'}}
+                            <svg>
+                                <use xlink:href="#icon-facebook_like"/>
+                            </svg>
+                        {{/if}}
+                    </a>
+                </li>
+            {{/each}}
+            {{#inArray (arrayify (pluck (limit settings.add_this.buttons 20) 'service')) 'facebook_like'}}
+                {{#each settings.add_this.buttons}}
+                    {{#if service '==' 'facebook_like'}}
+                    <li class="{{service}}" style="display: inline-block;width: 100%;height: 100px; ">
+                        <div class="addthis_button_{{service}} icon icon--{{service}}" style="width: 100%;
+                        height: 100%; text-align:center;" {{{annotation}}}>
+                              <iframe src="https://www.facebook.com/plugins/like.php?href={{../../postURL}}&width=450&layout=standard&action=like&size=small&show_faces=true&share=false&height=80&appId" width="400" height="20" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </li>
+                    {{/if}}
+                {{/each}}
+            {{/inArray}}
+
+
+        </ul>
+        <script type="text/javascript"
+                defer src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e94ed470ee51e32"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                if (typeof(addthis) === "object") {
+                    addthis.toolbox('.addthis_toolbox');
+                }
+            });
+        </script>
+    </div>
+{{/if}}

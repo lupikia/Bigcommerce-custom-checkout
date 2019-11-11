@@ -1,0 +1,13 @@
+<div class="section-title">
+  <h2 class="page-heading">{{lang 'products.featured' }}</h2>
+  {{#if theme_settings.FeaturedSubTitle}}
+    <p class="page-sub-heading">{{theme_settings.FeaturedSubTitle}}</p>
+  {{/if}}
+</div>
+
+
+{{#if settings.data_tag_enabled}}
+    {{> components/products/carousel products=products list="Featured Products"}}
+{{else}}
+    {{> components/products/carousel products=products}}
+{{/if}}

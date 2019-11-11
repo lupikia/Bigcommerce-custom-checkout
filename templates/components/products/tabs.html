@@ -1,0 +1,27 @@
+{{#if product.related_products}}
+<div class="related-product m-t-50">
+  <div class="section-title">
+    <h2 class="page-heading">{{lang 'products.related_products'}}</h2>
+    {{#if theme_settings.RelatedSubTitle}}
+      <p class="page-sub-heading">{{theme_settings.RelatedSubTitle}}</p>
+    {{/if}}
+  </div>
+    {{#if settings.data_tag_enabled}}
+          {{> components/products/carousel products=product.related_products columns=4 list="Related Products"}}
+      {{else}}
+          {{> components/products/carousel products=product.related_products columns=4}}
+    {{/if}}
+</div>
+{{/if}}
+
+{{#if product.similar_by_views}}
+<div class="customer-view-product m-t-50">
+  <div class="section-title">
+    <h2 class="page-heading">{{lang 'products.similar_by_views'}}</h2>
+    {{#if theme_settings.CustomerViewSubTitle}}
+      <p class="page-sub-heading">{{theme_settings.CustomerViewSubTitle}}</p>
+    {{/if}}
+  </div>
+    {{> components/products/carousel products=product.similar_by_views columns=4 list="Customers Also Viewed"}}
+</div>
+{{/if}}

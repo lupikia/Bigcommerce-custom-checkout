@@ -1,0 +1,421 @@
+// card image style
+.productCarousel{
+  .slick-track{
+    @include display-flex(flex);
+    @include justify-content(center);
+    @include flex-flow(row);
+  }
+  .slick-arrow{
+    top: -25px;
+    right: 14px;
+    background: none;
+    border: 0px;
+    svg{
+      display: none;
+      &.product-slick-arrow{
+        display: block;
+      }
+    }
+    &:before{
+      background-size: 100%;
+    }
+    &.slick-prev{
+      right: 46px;
+      left: auto;
+    }
+  }
+  &.slick-initialized{
+    .productCarousel-slide{
+      @include display-flex(flex);
+    }
+  }
+}
+.product{
+  overflow: visible;
+}
+.productCarousel-slide{
+  height: auto;
+  float: none;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  @media only screen and (max-width: 1023px) {
+    padding-top: 15px;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    background: $theme-white-color;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+.card {
+  transition: all .5s;
+  position: relative;
+  &:hover{
+    box-shadow: 2px 2px 16px 0px lighten($theme-black-color, 90%);
+    transition: all .5s;
+    @media only screen and (max-width: 1279px) {
+      box-shadow: none;
+    }
+    .card-title{
+      opacity: 0;
+      visibility: hidden;
+      transition: all .5s;
+      @media only screen and (max-width: 1279px) {
+        opacity: 1;
+        visibility: visible;
+      }
+      a{
+        &:hover{
+          color: darken($theme-white-color, 24%);
+        }
+      }
+    }
+    .card-button-block{
+      opacity: 1;
+      visibility: visible;
+      transition: all .5s;
+      top: 50%;
+      @media only screen and (max-width: 1023px) {
+        top: auto;
+      }
+    }
+    .card-figcaption-body-custom{
+      opacity: 1;
+      right: 10px;
+      transition: all .5s;
+      @media only screen and (max-width: 1279px) {
+        opacity: 0;
+      }
+    }
+  }
+}
+.card-inner{
+  @include display-flex(flex);
+  @include align-item(flex-start);
+  @include justify-content(center);
+  @include flex-wrap(wrap);
+  height: 100%;
+}
+.card-figure{
+  width: 100%;
+  @include display-flex(flex);
+  @include align-item(center);
+  @include justify-content(center);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.card-body{
+  padding: 16px 22px;
+  width: 100%;
+  padding-top: 0px;
+  @media only screen and (max-width: 1023px) {
+    padding: 10px;
+    padding-top: 0px;
+  }
+  .card-body-inn{
+    @media only screen and (max-width: 1023px) {
+      padding-bottom: 0px;
+    }
+  }
+  .brand-name{
+    font-size: 16px;
+    color: $theme-light-gray-color;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-top: 12px;
+    @media only screen and (max-width: 1023px) {
+      font-size: 14px;
+      line-height: 18px;
+      margin-top: 9px;
+    }
+  }
+}
+.card-title{
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0px;
+  text-align: center;
+  line-height: 20px;
+  @media only screen and (max-width: 1023px) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+.card-button-block{
+  position: absolute;
+  top: 150%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s;
+  margin-top: -22px;
+  left: 0;
+  right: 0;
+  width: auto;
+  @include display-flex(flex);
+  @include justify-content(center);
+  @include align-item(center);
+  @media only screen and (max-width: 1279px) {
+    display: none;
+  }
+  .button{
+    text-transform: uppercase;
+    background: $theme-primary-color;
+    color: $theme-white-color;
+    border-radius: 3px;
+    border-color: $theme-primary-color;
+    width: auto;
+    svg{
+      fill: $theme-white-color;
+    }
+    &:hover{
+      background: $theme-white-color;
+      color: $theme-primary-color;
+      svg{
+        fill: $theme-primary-color;
+      }
+    }
+  }
+}
+
+.card-figcaption-button{
+  @include display-flex(flex);
+  @include align-item(center);
+  @include justify-content(center);
+  margin: 0px;
+  svg{
+    width: 16px;
+    height: 18px;
+    margin-right: 9px;
+  }
+  &:active, &:hover{
+    border: 1px solid $theme-primary-color;
+    background: $theme-primary-color;
+    color: $theme-white-color;
+  }
+}
+
+.card-mid-block{
+  margin-bottom: 15px;
+  width: 100%;
+  position: relative;
+  margin-top: 15px;
+  @include display-flex(flex);
+  @include align-item(center);
+  @include justify-content(center);
+  @include flex-wrap(wrap);
+  min-height: 45px;
+  @media only screen and (max-width: 1023px) {
+    margin-top: 9px;
+    margin-bottom: 9px;
+  }
+}
+
+.price-block{
+  @include display-flex(flex);
+  @include align-item(center);
+  @include justify-content(center);
+  @include flex-wrap(wrap);
+  margin: 0px;
+}
+
+.card-text{
+  text-align: center;
+  &.rating-block{
+    margin: 0px;
+    margin-top: 12px;
+    @media only screen and (max-width: 1023px) {
+      margin-top: 9px;
+    }
+    @media only screen and (max-width: 567px) {
+      margin-top: 4px;
+    }
+  }
+}
+.card-summary{
+  display: none;
+}
+// sale flag style start
+.sale-flag-side, .sale-flag-sash{
+  padding: 0px;
+  border-radius: 0px;
+  height: 22px;
+  line-height: 22px;
+  left: 13px;
+  top: 15px;
+  @media only screen and (max-width: 567px) {
+    left: 5px;
+    top: 5px;
+  }
+  &:before, &:after{
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 2px;
+    background: url('../img/sale-dot.png');
+    top: 3px;
+    left: 0;
+  }
+  &:after{
+    right: 0;
+    left: auto;
+  }
+  .sale-text{
+    padding: 4px 8px;
+    line-height: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+.sale-flag-sash{
+  top: 24px;
+  width: auto;
+}
+.starwrap{
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  .sale-text-burst{
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 40px;
+    top: 30%;
+  }
+  .sale-flag-star{
+    width: 40px;
+    height: 40px;
+    &:before, &:after{
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+.price-section{
+  margin: 0 6px;
+  text-align: center;
+  @media only screen and (max-width: 567px) {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+.price-now-label{
+  display: block;
+  text-align: left;
+  @media only screen and (max-width: 567px) {
+    display: inline-block;
+  }
+}
+.price{
+  font-size: 16px;
+  color: $theme-light-gray-color;
+  @media only screen and (max-width: 1023px) {
+    font-size: 14px;
+  }
+}
+.price-section--withTax{
+  &.rrp-price--withTax, &.rrp-price--withTax, &.non-sale-price--withTax{
+    .price-now-label{
+      color: $theme-light-gray-color;
+      font-weight: 400;
+    }
+  }
+  .price--withTax, .price-now-label-withtax{
+    font-weight: 500;
+    color: $theme-primary-color;
+  }
+}
+.card-figcaption-body-custom{
+  position: absolute;
+  top: 10px;
+  right: -50%;
+  opacity: 0;
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+  .button{
+    background: $theme-white-color;
+    width: 42px;
+    height: 42px;
+    line-height: 46px;
+    border: 1px solid $light-border-color;
+    border-radius: 50%;
+    padding: 0px;
+    margin-bottom: 10px;
+    .compare-checkbox{
+      width: auto;
+      height: auto;
+      cursor: pointer;
+      opacity: 0;
+      position: absolute;
+    }
+    &:hover, &.compare-active{
+      background: $theme-primary-color;
+      border: 1px solid $theme-primary-color;
+      svg{
+        fill:$theme-white-color;
+      }
+    }
+    &.card-figcaption-button{
+      svg{
+        height: 15px;
+        width: 15px;
+        margin: 0px;
+      }
+    }
+    &.quickview{
+      svg{
+        width: 20px;
+      }
+    }
+    + .button{
+      margin-top: 0px;
+    }
+    &:hover{
+      background: $theme-primary-color;
+      border: 1px solid $theme-primary-color;
+      svg{
+        fill: $theme-white-color;
+      }
+    }
+  }
+}
+// sale flag style end
+
+.card-inner{
+  flex-flow: column;
+  @include justify-content(flex-start);
+}
+.card-img-container{
+  @include display-flex(flex);
+  @include justify-content(center);
+  @include align-item(center);
+  height: 100%;
+}
+.card-figure{
+  min-height: auto;
+  position: relative;
+  display: block;
+  a{
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+}
+.card-body-inn{
+  @include display-flex(flex);
+  flex-flow: column;
+  @include justify-content(flex-start);
+  @include align-item(center);
+}
+.card-body{
+  margin-top: auto;
+}
+.card-mid-block{
+  min-height: inherit;
+}

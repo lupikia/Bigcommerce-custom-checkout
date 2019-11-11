@@ -1,0 +1,56 @@
+<div class="actionBar-main">
+    <div class="filter-left">
+      {{#lt pagination.category.end category.total_products }}
+      <div class="pagination-count">{{pagination.category.end}} of {{category.total_products}} Items</div>
+      {{else}}
+      {{#if pagination.category.start}}
+      <div class="pagination-count">{{category.total_products}} of {{category.total_products}} Items</div>
+      {{else}}
+      <div class="pagination-count">{{category.total_products}} of {{category.total_products}} Items</div>
+      {{/if}}
+      {{/lt}}
+      {{> components/common/paginator pagination.category}}
+    </div>
+
+  <div class="filter-right">
+    <div class="product-view-button">
+      <a href="#product-view-mode" class="product-view-btn grid-view view-button-grid" data-view-val="product-grid-view">
+        <svg><use xlink:href="#icon-grid"></use></svg>
+     </a>
+     <a href="#product-view-mode" class="product-view-btn list-view view-button-list" data-view-val="product-list-style">
+        <svg><use xlink:href="#icon-list"></use></svg>
+     </a>
+    </div>
+{{> components/products/filter sort=pagination.category.sort}}
+</div>
+</div>
+<div class="product-view-mode">
+  <form action="{{urls.compare}}" method='POST' {{#if settings.data_tag_enabled}} data-list-name="Category: {{category.name}}" {{/if}} data-product-compare>
+      {{#if theme_settings.product_list_display_mode '===' 'grid'}}
+          {{#if settings.data_tag_enabled}}
+              {{> components/products/grid products=category.products show_compare=category.show_compare theme_settings=theme_settings event="list" }}
+          {{else}}
+              {{> components/products/grid products=category.products show_compare=category.show_compare theme_settings=theme_settings}}
+          {{/if}}
+      {{else}}
+          {{#if settings.data_tag_enabled}}
+              {{> components/products/list products=category.products show_compare=category.show_compare theme_settings=theme_settings event="list" }}
+          {{else}}
+              {{> components/products/list products=category.products show_compare=category.show_compare theme_settings=theme_settings}}
+          {{/if}}
+      {{/if}}
+  </form>
+</div>
+
+<div class="filter-left m-t-20">
+  {{#lt pagination.category.end category.total_products }}
+  <div class="pagination-count">{{pagination.category.end}} of {{category.total_products}} Items</div>
+  {{else}}
+  {{#if pagination.category.start}}
+  <div class="pagination-count">{{category.total_products}} of {{category.total_products}} Items</div>
+  {{else}}
+  <div class="pagination-count">{{category.total_products}} of {{category.total_products}} Items</div>
+  {{/if}}
+  {{/lt}}
+  {{> components/common/paginator pagination.category}}
+</div>

@@ -1,0 +1,24 @@
+{{#if currency_selector.currencies.length '>' 1}}
+  <ul class="navUser-section sf-menu">
+      <li class="navUser-item currency-heading">
+        <span>{{lang 'common.currency' code=currency_selector.active_currency_code}}</span>
+      </li>
+      <li class="navUser-item navUser-item-currencySelector">
+          <a class="navUser-action navUser-action--currencySelector" href="#" aria-controls="currencySelection" aria-expanded="false">
+            <span class="flag">{{{lang 'common.currency-flag' flag=currency_selector.active_currency_flag}}}</span><span class="code">{{lang 'common.currency-code' code=currency_selector.active_currency_code}}</span>
+            <i class="icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
+          </a>
+          <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true" tabindex="-1">
+            {{#each currency_selector.currencies}}
+            {{#if is_active "!=" true}}
+              <li>
+                  <a href="{{{switch_url}}}">
+                    <span class="flag">{{{flag}}}</span><span class="code">{{name}}</span>
+                  </a>
+              </li>
+            {{/if}}
+          {{/each}}
+          </ul>
+      </li>
+  </ul>
+{{/if}}

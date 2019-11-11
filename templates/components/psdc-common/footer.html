@@ -1,0 +1,157 @@
+
+
+<footer class="footer" role="contentinfo">
+    {{> components/psdc-common/usp-section}}
+    <div class="footer-info-inn">
+      <div class="container">
+          <section class="footer-info">
+            {{#if settings.address}}
+              <article class="footer-info-col footer-info-col--small footer-store-info" data-section-type="storeInfo">
+                  {{#if theme_settings.footer-logo}}
+                    <div class="footer-logo">
+                      <a href="/"><img src="/product_images/uploaded_images/{{theme_settings.footer-logo}}" alt=""></a>
+                    </div>
+                  {{/if}}
+                  {{#if settings.address}}
+                    <p><svg><use xlink:href="#icon-location"></use></svg><span>{{nl2br settings.address}}</span></p>
+                  {{/if}}
+                  {{#if settings.phone_number}}
+                    <p><svg><use xlink:href="#icon-call"></use></svg><a href="tel:{{lang 'footer.call_us' phone_number=settings.phone_number}}">{{lang 'footer.call_us' phone_number=settings.phone_number}}</a></p>
+                  {{/if}}
+                  {{#if theme_settings.footer-email}}
+                    <p class="email"><svg><use xlink:href="#icon-email-id"></use></svg><a href="mailto:{{theme_settings.footer-email}}">{{theme_settings.footer-email}}</a></p>
+                  {{/if}}
+                  {{#if theme_settings.footer-time}}
+                    <p class="time"><svg><use xlink:href="#icon-time"></use></svg><span>{{theme_settings.footer-time}}</span></p>
+                  {{/if}}
+              </article>
+            {{/if}}
+            {{#if pages}}
+                <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
+                  <div class="footer-info--col-inn">
+                    <h5 class="footer-info-heading footer-toggle-title">{{lang 'footer.navigate'}}
+                      <svg class="down"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+                    </h5>
+                    <div class="footer-toggle-content">
+                      <ul class="footer-info-list">
+                        {{#each pages}}
+                            {{#if @index '<' '7' }}
+                                <li>
+                                    <a href="{{url}}">{{name}}</a>
+                                </li>
+                            {{/if}}
+                        {{/each}}
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              {{/if}}
+              {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+              <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
+                <div class="footer-info--col-inn">
+                  <h5 class="footer-info-heading footer-toggle-title">{{lang 'footer.brands'}}
+                    <svg class="down"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+                  </h5>
+                  <div class="footer-toggle-content">
+                    <ul class="footer-info-list">
+                      {{#each shop_by_brand}}
+                          {{#if @index '<' '6' }}
+                              <li>
+                                  <a href="{{url}}">{{name}}</a>
+                              </li>
+                          {{/if}}
+                      {{/each}}
+                      <li class="view-all"><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
+                  </ul>
+                  </div>
+                </div>
+              </article>
+              {{/and}}
+              {{#if categories}}
+              <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
+                <div class="footer-info--col-inn">
+                  <h5 class="footer-info-heading footer-toggle-title">{{lang 'footer.categories'}}
+                    <svg class="down"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+                  </h5>
+                  <div class="footer-toggle-content">
+                    <ul class="footer-info-list">
+                        {{#each categories}}
+                          {{#if @index '<' '7' }}
+                              <li>
+                                  <a href="{{url}}">{{name}}</a>
+                              </li>
+                          {{/if}}
+                        {{/each}}
+                        <li class="view-all"><a href="/categories">{{lang 'common.view_all'}}</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+              {{/if}}
+          </section>
+
+        <div class="footer-mid-section">
+          {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+            <article class="footer-info-col
+                footer-info-col--social
+                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
+                data-section-type="footer-webPages">
+                    <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
+                    {{> components/common/social-links}}
+            </article>
+          {{/if}}
+          {{#if settings.show_newsletter_box}}
+            <article class="footer-info-col footer-info-newsletter" data-section-type="newsletterSubscription">
+              <div class="footer-info-newsletter-inn">
+                {{#if settings.show_newsletter_box}}
+                    {{> components/common/subscription-form}}
+                {{/if}}
+              </div>
+            </article>
+          {{/if}}
+          <article class="footer-info-col footer-info-col--payment">
+            {{#or theme_settings.show_accept_amex theme_settings.show_accept_discover theme_settings.show_accept_mastercard theme_settings.show_accept_paypal theme_settings.show_accept_visa}}
+              <div class="payment">
+                <h5 class="footer-info-heading">{{lang 'payment-method.payment'}}</h5>
+                {{> components/psdc-common/payment-icons}}
+              </div>
+            {{/or}}
+            {{#if theme_settings.geotrust_ssl_common_name}}
+              <div class="footer-geotrust-ssl-seal">
+                  {{> components/common/geotrust-ssl-seal}}
+              </div>
+            {{/if}}
+          </article>
+        </div>
+      </div>
+    </div>
+    {{#or theme_settings.show_copyright_footer theme_settings.show_powered_by theme_settings.show_powered_by_bigcommerce}}
+    <div class="footer-bar">
+      <div class="container">
+        <div class="footer-bar-inn">
+          {{#or theme_settings.show_copyright_footer theme_settings.show_powered_by_bigcommerce}}
+            <div class="footer-copyright">
+                <p class="powered-by">
+                    {{#if theme_settings.show_copyright_footer}}
+                    <span>&copy; {{moment format="YYYY"}}</span>
+                    <span class="theme-color">{{settings.store_name}}</span> <span class="line">|</span>
+                    {{/if}}
+                    {{#if theme_settings.show_powered_by_bigcommerce}}
+                    <span class="bigcommerce" >Powered by <a href="https://www.bigcommerce.com/?utm_source=lifestyle&amp;utm_medium=poweredbyBC" rel="nofollow" target="_blank">BigCommerce</a>
+                    <span class="line">|</span>
+                    </span>
+                    {{/if}}
+                    <a class="site-map" href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
+                </p>
+            </div>
+          {{/or}}
+          {{#if theme_settings.show_powered_by}}
+              <div class="footer-copyright">
+                  <p class="powered-by">BigCommerce Theme by <a class="theme-red-color" href="https://themes.psdcenter.com/?utm_source=lifestyleTheme&utm_medium=themebyPSD" rel="nofollow" target="_blank">PSDCenter</a></p>
+              </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    {{/or}}
+</footer>

@@ -1,0 +1,296 @@
+// heroCarousel-content style
+
+.heroCarousel{
+  margin-bottom: 40px;
+  margin-top: 0px;
+  @media only screen and (max-width: 1023px) {
+    margin-bottom: 20px;
+  }
+}
+
+.heroCarousel-content{
+  background-color: transparent;
+  padding: 20px;
+  width: 95rem;
+  top: 64%;
+  @media only screen and (max-width: 1919px) {
+    width: 85rem;
+  }
+  @media only screen and (max-width: 1279px) {
+    width: 68rem;
+  }
+  @media only screen and (max-width: 1023px) {
+    width: 100%;
+    position: absolute;
+    transform: translateY(-50%);
+  }
+}
+.heroCarousel-title, .heroCarousel-description{
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.32);
+  font-family: $body-second-font;
+  line-height: 66px;
+  text-transform: uppercase;
+}
+.heroCarousel-title{
+  font-size: 72px;
+  letter-spacing: 21px;
+  font-weight: 900;
+  margin-bottom: 26px;
+  @media only screen and (max-width: 1919px) {
+    font-size: 62px;
+    line-height: 56px;
+  }
+  @media only screen and (max-width: 1279px) {
+    font-size: 52px;
+    line-height: 46px;
+    letter-spacing: 14.6px;
+    margin-bottom: 15px;
+  }
+  @media only screen and (max-width: 1023px) {
+    font-size: 30px;
+    line-height: 22px;
+  }
+  @media only screen and (max-width: 767px) {
+    font-size: 26px;
+    line-height: 18px;
+  }
+  @media only screen and (max-width: 666px) {
+    letter-spacing: 4px;
+
+  }
+  @media only screen and (max-width: 479px) {
+    font-size: 16px;
+    line-height: 14.6px;
+    margin-bottom: 5px;
+  }
+}
+.heroCarousel-description{
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  @media only screen and (max-width: 1279px) {
+    font-size: 38px;
+    line-height: 56px;
+  }
+  @media only screen and (max-width: 1023px) {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  @media only screen and (max-width: 767px) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  @media only screen and (max-width: 666px) {
+    letter-spacing: 2px;
+  }
+  @media only screen and (max-width: 479px) {
+    font-size: 11px;
+    line-height: 14.6px;
+    margin-bottom: 5px;
+  }
+}
+.heroCarousel-action{
+  padding: 13px 24px;
+  line-height: 24px;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 400;
+  border-radius: 0px;
+  margin-top: 14px;
+  @media only screen and (max-width: 1279px) {
+    padding: 10px 20px;
+    line-height: 22px;
+    font-size: 16px;
+  }
+  @media only screen and (max-width: 1023px) {
+    margin: 0px;
+  }
+  @media only screen and (max-width: 666px) {
+    padding: 8px 12px;
+    line-height: 18px;
+    font-size: 14px;
+  }
+  @media only screen and (max-width: 479px) {
+    padding: 5px 9px;
+    line-height: 12px;
+    font-size: 11px;
+  }
+  .heroCarousel-action-inn{
+    @include display-flex(flex);
+    @include align-item(center);
+    @include justify-content(center);
+    svg{
+      width: 17px;
+      height: 17px;
+      fill: $theme-white-color;
+      margin-left: 8px;
+      @media only screen and (max-width: 1279px) {
+        width: 15px;
+        height: 18px;
+      }
+      @media only screen and (max-width: 666px) {
+        width: 12px;
+        height: 15px;
+        margin-left: 5px;
+      }
+      @media only screen and (max-width: 479px) {
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+      }
+    }
+  }
+  &:hover{
+    .heroCarousel-action-inn{
+      svg{
+        fill: $theme-primary-color;
+      }
+    }
+  }
+}
+
+.heroCarousel{
+  .slick-dots{
+    bottom: 18px;
+    @media only screen and (max-width: 767px) {
+      bottom: -24px;
+    }
+    li{
+      background: transparent;
+      width: 20px;
+      height: 20px;
+      padding: 0px;
+      line-height: 26px;
+      button{
+        border: 1px solid stencilColor('carousel-dot-color');
+        height: 14px;
+        width: 14px;
+        @media only screen and (max-width: 767px) {
+          border: 1px solid darken(stencilColor('carousel-dot-color'), 12%);
+        }
+        &:before{
+          width: 8px;
+          height: 8px;
+          background: stencilColor('carousel-dot-color');
+          top: 50%;
+          left: 50%;
+          margin-left: -4px;
+          margin-top: -4px;
+          opacity: 1;
+          @media only screen and (max-width: 767px) {
+          background: darken(stencilColor('carousel-dot-color'), 12%);
+          }
+        }
+        &:hover, &:focus{
+          border: 1px solid stencilColor('carousel-dot-color-active');
+          &:before{
+            background: stencilColor('carousel-dot-color-active');
+            opacity: 1;
+          }
+        }
+      }
+      &.slick-active{
+        button{
+          border: 1px solid stencilColor('carousel-dot-color-active');
+          &:before{
+            background: stencilColor('carousel-dot-color-active');
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .slick-arrow{
+    width: 60px;
+    height: 50px;
+    @media only screen and (max-width: 1279px) {
+      width: 40px;
+      height: 30px;
+      margin-top: -15px;
+    }
+    @media only screen and (max-width: 767px) {
+      display: none !important;
+    }
+    svg{
+      width: 20px;
+      height: 20px;
+      fill: stencilColor('carousel-arrow-color');
+    }
+    &:hover{
+      background: $theme-primary-color;
+      border: 1px solid $theme-primary-color;
+      svg{
+        fill: $theme-white-color;
+      }
+    }
+  }
+}
+
+
+.heroCarousel{
+  .heroCarousel-content{
+    top: 100%;
+    display: none;
+  }
+}
+.slick-initialized {
+  .slick-active{
+    .heroCarousel-content{
+      display:block;
+      top: 64%;
+      @media only screen and (max-width: 1919px) {
+        top: 60%;
+      }
+      @media only screen and (max-width: 1023px) {
+        top: 50%;
+      }
+    }
+  }
+}
+
+.slick-active{
+  .animated {
+    -webkit-animation-duration : 2s  ;
+    animation-duration : 2s  ;
+
+    -webkit-animation-delay : 0.1s  ;
+    animation-delay : 0.1s  ;
+  }
+
+  @keyframes slideInUp {
+    from {
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .slideInUp {
+    animation-name: slideInUp;
+  }
+  @keyframes slideInDown {
+    from {
+      transform: translate3d(0, -100%, 0);
+      visibility: visible;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .slideInDown {
+    animation-name: slideInDown;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+}

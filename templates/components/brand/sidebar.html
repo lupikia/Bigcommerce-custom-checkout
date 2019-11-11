@@ -1,0 +1,34 @@
+<nav>
+    {{#if brand.faceted_search_enabled}}
+        {{> components/faceted-search/index brand}}
+    {{else}}
+        {{#if shop_by_brand}}
+        <div class="sidebarBlock">
+            <h5 class="sidebarBlock-heading sidebar-toggle-title">{{lang 'brand.label'}}
+              <div class="accordion-navigation-actions">
+                  <svg class="down"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+                  <svg class="up"><use xlink:href="#icon-keyboard-arrow-up"></use></svg>
+              </div>
+            </h5>
+            <ul class="navList navList-treeview sidebar-toggle-content">
+                {{#each shop_by_brand}}
+                  <li class="navList-item {{#if is_active '==' true}}ActivePage{{/if}}">
+                    <a class="navList-action" href="{{url}}">{{name}}</a> {{#if children}}
+                    <ul class="">
+                        {{#each children}}
+                        <li class="navList-item {{#if is_active '==' true}}ActivePage{{/if}}">
+                            <a class="navList-action" href="{{url}}">{{name}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </li>
+                {{/each}}
+                <li class="navList-item view-all">
+                    <a class="navList-action" href="{{urls.brands}}">{{lang 'common.view_all'}}</a>
+                </li>
+            </ul>
+        </div>
+        {{/if}}
+    {{/if}}
+</nav>

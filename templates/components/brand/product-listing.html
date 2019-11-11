@@ -1,0 +1,32 @@
+
+<div class="actionBar-main">
+    <div class="filter-left">
+      {{> components/common/paginator pagination.brand}}
+    </div>
+
+  <div class="filter-right">
+    <div class="product-view-button">
+      <a href="#product-view-mode" class="product-view-btn grid-view view-button-grid" data-view-val="product-grid-view">
+        <svg><use xlink:href="#icon-grid"></use></svg>
+     </a>
+     <a href="#product-view-mode" class="product-view-btn list-view view-button-list" data-view-val="product-list-style">
+        <svg><use xlink:href="#icon-list"></use></svg>
+     </a>
+    </div>
+{{> components/products/filter sort=pagination.brand.sort}}
+</div>
+</div>
+
+<div class="product-view-mode">
+  <form action="{{urls.compare}}" method='POST' {{#if settings.data_tag_enabled}} data-list-name="Brand: {{brand.name}}" {{/if}} data-product-compare>
+      {{#if theme_settings.product_list_display_mode '===' 'grid'}}
+          {{> components/products/grid products=brand.products show_compare=brand.show_compare theme_settings=theme_settings event="list"}}
+      {{else}}
+          {{> components/products/list products=brand.products show_compare=brand.show_compare theme_settings=theme_settings event="list"}}
+      {{/if}}
+  </form>
+</div>
+
+<div class="filter-left m-t20">
+  {{> components/common/paginator pagination.brand}}
+</div>

@@ -1,0 +1,54 @@
+<!-- SECOND LEVEL STARTS -->
+{{#if children}}
+
+<a class="navPages-action" href="{{url}}" class="needsclick">
+  <span class="nav-arrow"><svg class=""><use xlink:href="#icon-m-right"></use></span>
+    {{name}}
+    <svg class="chevron-down"><use xlink:href="#icon-chevron-down"></use></svg>
+</a>
+<ul class="navlist-sub nav-second-level">
+    {{#each children}}
+    <li>
+        <!-- THIRD LEVEL STARTS -->
+        {{#if children}}
+        <a class="navPages-action" href="{{url}}" class="needsclick">
+          <span class="nav-arrow"><svg class=""><use xlink:href="#icon-m-right"></use></span>
+            {{name}} <svg class="chevron-down"><use xlink:href="#icon-chevron-down"></use></svg>
+        </a>
+        <ul class="navlist-sub nav-third-level">
+            {{#each children}}
+            <li>
+              <!-- FOURTH LEVEL STARTS -->
+              {{#if children}}
+              <a class="navPages-action" href="{{url}}" class="needsclick">
+                <span class="nav-arrow"><svg class=""><use xlink:href="#icon-m-right"></use></span>
+                  {{name}} <svg class="chevron-down"><use xlink:href="#icon-chevron-down"></use></svg>
+              </a>
+              <ul class="navlist-sub nav-third-level">
+                  {{#each children}}
+                  <li>
+                      <a class="navPages-action" href="{{url}}" class="needsclick">{{name}} </a>
+                  </li>
+                  {{/each}}
+              </ul>
+              {{else}}
+                <a class="navPages-action" href="{{url}}" class="needsclick">{{name}}</a>
+              {{/if}}
+              <!-- FOURTH LEVEL STARTS -->
+
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <a class="navPages-action" href="{{url}}" class="needsclick">
+          <span class="nav-arrow"><svg class=""><use xlink:href="#icon-m-right"></use></span>{{name}}</a>
+        {{/if}}
+        <!-- THIRD LEVEL STARTS -->
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<a class="navPages-action" href="{{url}}">
+  <span class="nav-arrow"><svg class=""><use xlink:href="#icon-m-right"></use></span>{{name}}</a>
+{{/if}}
+<!-- SECOND LEVEL ENDS -->

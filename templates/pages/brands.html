@@ -1,0 +1,38 @@
+---
+brands:
+---
+
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<main class="page">
+  <div class="column">
+    <h1 class="page-heading">{{lang 'brand.label'}}</h1>
+    <ul class="brandGrid">
+        {{#each brands}}
+            <li class="brand">
+                <article class="card {{#if alternate}}card--alternate{{/if}}">
+                    <figure class="card-figure {{#if image}}show-image{{else}}no-img{{/if}}">
+                        <a href="{{url}}">
+                            <div class="card-img-container">
+                                <img class="card-image {{#if image}}with-img{{else}}without-img{{/if}} lazyload" 
+                                data-sizes="auto" src="{{cdn 'img/loading.svg'}}"
+                                data-src="{{getImage image 'brand_size' (cdn ../theme_settings.default_image_brand)}}" alt="{{name}}" title="{{name}}">
+                            </div>
+                        </a>
+                    </figure>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{url}}">{{name}}</a>
+                        </h4>
+                    </div>
+                </article>
+            </li>
+        {{/each}}
+    </ul>
+    {{> components/common/paginator pagination.brands}}
+  </div>
+</main>
+{{/partial}}
+{{> layout/base}}

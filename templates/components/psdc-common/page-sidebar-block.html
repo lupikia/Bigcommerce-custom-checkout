@@ -1,0 +1,16 @@
+
+{{#if page}}
+<div class="sidebarBlock page-sidebar-block">
+  <h5 class="sidebarBlock-heading sidebar-toggle-title">{{lang 'footer.navigate'}}
+    <div class="accordion-navigation-actions">
+        <svg class="down"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+        <svg class="up"><use xlink:href="#icon-keyboard-arrow-up"></use></svg>
+    </div>
+  </h5>
+  <ul class="navList navList-treeview sidebar-toggle-content">
+    {{#each pages}}
+        <li class="navList-item">{{> components/psdc-common/navigation-list}}</li>
+    {{/each}}
+  </ul>
+</div>
+{{/if}}

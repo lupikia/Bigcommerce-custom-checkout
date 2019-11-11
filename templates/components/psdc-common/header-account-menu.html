@@ -1,0 +1,51 @@
+<li class="navUser-item navUser-item--account">
+    <a class="navUser-action needsclick" href="{{urls.account.index}}">
+      <svg><use xlink:href="#icon-user"></use></svg>
+      <!-- <span>{{lang 'common.account'}}</span> -->
+    </a>
+    <ul class="navUser-section-sub section-sub-right">
+      {{#if customer}}
+        <li class="navUser-item">
+            <a class="navUser-action needsclick" href="{{urls.auth.logout}}">
+              <svg><use xlink:href="#icon-padlock"></use></svg><span>{{lang 'common.logout'}}</span>
+            </a>
+        </li>
+      {{else}}
+        <li class="navUser-item">
+          <a class="navUser-action needsclick" href="{{urls.auth.login}}">
+            <svg><use xlink:href="#icon-signout"></use></svg><span>{{lang 'common.login'}}</span>
+          </a>
+        </li>
+        {{#if settings.account_creation_enabled}}
+        <li class="navUser-item">
+          <a class="navUser-action needsclick" href="{{urls.auth.create_account}}">
+            <svg><use xlink:href="#icon-register"></use></svg><span>{{lang 'common.sign_up'}}</span>
+          </a>
+        </li>
+        {{/if}}
+      {{/if}}
+      {{#if settings.gift_certificates_enabled}}
+          <li class="navUser-item">
+              <a class="navUser-action needsclick" href="{{urls.gift_certificate.purchase}}">
+              <svg><use xlink:href="#icon-gift-certificate"></use></svg><span>{{lang 'common.gift_cert'}}</span>
+              </a>
+          </li>
+      {{/if}}
+      {{#if settings.show_wishlist}}
+        <li class="navUser-item navUser-item-wishlist">
+            <a class="navUser-action needsclick" href="{{urls.account.wishlists.all}}">
+              <svg><use xlink:href="#icon-wishlist"></use></svg><span>{{lang 'account.nav.wishlist'}}</span>
+            </a>
+        </li>
+      {{/if}}
+
+      {{#if customer.store_credit.value '>' 0}}
+          <li class="navUser-item navUser-item-storeCredit">
+              <a class="navUser-action navUser-action--storeCredit needsclick" href="{{urls.cart}}">
+                 <span>{{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}</span>
+              </a>
+          </li>
+      {{/if}}
+
+    </ul>
+</li>

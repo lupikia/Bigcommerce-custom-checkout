@@ -1,0 +1,1034 @@
+
+// common headeing style
+.section-title{
+  text-align: center;
+  .page-heading{
+    margin-bottom: 0px;
+    border-bottom: 0;
+    line-height: 24px;
+    padding-bottom: 0px;
+    @media only screen and (max-width: 1023px) {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+}
+.page-heading{
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: stencilColor("color-textHeading");
+  letter-spacing: normal;
+  line-height: 40px;
+  border-bottom: $theme-border-color;
+  padding-bottom: 15px;
+  @media only screen and (max-width: 1023px) {
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+  + .page-sub-heading{
+      margin-top: 6px;
+      font-size: 24px;
+      @media only screen and (max-width: 1023px) {
+        font-size: 20px;
+        line-height: 22px;
+      }
+    }
+    svg{
+      width: 20px;
+      height: 20px;
+      fill:$theme-primary-color;
+      margin-right: 8px;
+    }
+    span{
+
+    }
+}
+.page-sub-heading{
+  color: $theme-dark-color;
+  font-family: $body-third-font;
+  margin-bottom: 0px;
+}
+// home promotional banner start
+.home-promotional-banner{
+  margin-top: 39px;
+  @media only screen and (max-width: 1023px) {
+    margin-top: 30px;
+  }
+  &.carousel-open{
+    margin-top: 0px;
+  }
+  &.m-b-60{
+    @media only screen and (max-width: 1023px) {
+      margin-bottom: 37px;
+    }
+  }
+  .banner-main-block{
+    margin: 0 -15px;
+    @include display-flex(flex);
+    @include align-item(flex-start);
+    @include justify-content(flex-start);
+    @media only screen and (max-width: 1023px) {
+      margin: 0 -10px;
+    }
+    @media only screen and (max-width: 767px) {
+      @include flex-wrap(wrap);
+    }
+    @media only screen and (max-width: 567px) {
+      margin: 0 -5px;
+    }
+    @media only screen and (max-width: 479px) {
+      margin: 0;
+    }
+  }
+  .banner-block-half{
+    width: 50%;
+    @media only screen and (max-width: 1023px) {
+      &.p-l-15{
+        padding-left: 10px;
+      }
+      &.p-r-15{
+        padding-right: 10px;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+    @media only screen and (max-width: 567px) {
+      &.p-l-15{
+        padding-left: 5px;
+      }
+      &.p-r-15{
+        padding-right: 5px;
+      }
+    }
+    @media only screen and (max-width: 479px) {
+      &.p-l-15{
+        padding-left: 0px;
+      }
+      &.p-r-15{
+        padding-right: 0px;
+      }
+    }
+  }
+  .banner-block-full{
+    width: 100%;
+  }
+  .banner-block-3{
+    padding: 0px;
+    margin-top: 30px;
+    @media only screen and (max-width: 1919px) {
+      margin-top: 27px;
+    }
+    @media only screen and (max-width: 1279px) {
+      margin-top: 24px;
+    }
+    @media only screen and (max-width: 1023px) {
+      margin-top: 17px;
+    }
+    @media only screen and (max-width: 567px) {
+      margin-top: 10px;
+    }
+    @media only screen and (max-width: 479px) {
+      @include flex-wrap(wrap);
+      .p-r-15{
+        margin-bottom: 10px;
+      }
+    }
+    img{
+      width: 100%;
+    }
+  }
+  .banner-block-2{
+    @media only screen and (max-width: 767px) {
+      margin-top: 17px;
+    }
+    @media only screen and (max-width: 567px) {
+      margin-top: 10px;
+    }
+  }
+}
+// home promotional banner end
+
+// product section style Start
+.product-section{
+  &.m-b-40{
+    @media only screen and (max-width: 1023px) {
+      margin-bottom: 17px;
+    }
+  }
+}
+.slick-slider{
+  .product-slick-arrow{
+    display: none;
+    width: 18px;
+    height: 12px;
+  }
+}
+// product section style End
+
+// Home page Blog Style Start
+.home-blog-list-wrap{
+  .home-blog-list{
+    display: flex;
+    @media only screen and (max-width: 666px) {
+      flex-flow: column;
+    }
+  }
+}
+
+// .home-blog-item-inner{
+//   flex-flow: column;
+//     -webkit-box-pack: start;
+//     -ms-flex-pack: start;
+//     justify-content: flex-start;
+//     display: flex;
+//     align-items: flex-start;
+//     height: 100%;
+//     background: $theme-white-color;
+// }
+
+.home-blog-post{
+  @media only screen and (max-width: 1023px) {
+    &.m-b-50{
+      margin-bottom: 30px;
+    }
+  }
+}
+.home-blog-list-wrap{
+  @media only screen and (max-width: 1023px) {
+    &.m-t-30{
+      margin-top: 15px;
+    }
+  }
+  @media only screen and (max-width: 666px) {
+    .custom-row{
+      @include flex-wrap(wrap);
+      margin: 0px;
+    }
+  }
+}
+.home-blog-item{
+  @media only screen and (max-width: 1023px) {
+    &.p-l-15{
+      padding-left: 10px;
+    }
+    &.p-r-15{
+      padding-right: 10px;
+    }
+  }
+  @media only screen and (max-width: 666px) {
+    &.width-33{
+      width: 100%;
+      padding: 0px;
+    }
+    &:last-child{
+      .home-blog-detail{
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+.home-blog-img{
+  position: relative;
+  width: 100%;
+  a{
+    text-align: center;
+    display: block;
+    span{
+      max-height: 300px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      overflow: hidden;
+      @media only screen and (max-width: 1919px) {
+        max-height: 224px;
+        min-height: 224px;
+      }
+      @media only screen and (max-width: 1279px) {
+        max-height: 210px;
+        min-height: 210px;
+      }
+      @media only screen and (max-width: 1023px) {
+        max-height: 150px;
+        min-height: 150px;
+      }
+      @media only screen and (max-width: 767px) {
+        max-height: 130px;
+        min-height: 130px;
+      }
+      @media only screen and (max-width: 666px) {
+        max-height: inherit;
+      }
+    }
+    img{
+      width: auto;
+      overflow: hidden;
+      background-color: $theme-white-color;
+      position: relative;
+      -webkit-transition: all 500ms;
+      -moz-transition: all 500ms;
+      -ms-transition: all 500ms;
+      -o-transition: all 500ms;
+      transition: all 500ms;
+    }
+  }
+}
+.home-blog-detail{
+  text-align: left;
+  padding: 0 10px;
+  padding-top: 15px;
+  // margin-top: auto;
+  width: 100%;
+  @media only screen and (max-width: 1023px) {
+    padding-top: 15px;
+  }
+  @media only screen and (max-width: 666px) {
+    margin-bottom: 30px;
+  }
+  h4{
+    line-height: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    letter-spacing: normal;
+    @media only screen and (max-width: 1023px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 7px;
+    }
+    a{
+      color: $theme-primary-color;
+      &:hover{
+        color: $theme-light-gray-color;
+      }
+    }
+  }
+  p{
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 10px;
+    color: $theme-light-black-color;
+    @media only screen and (max-width: 1023px) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 7px;
+    }
+  }
+  .blog-date{
+    font-size: 15px;
+    font-weight: 400;
+    color: $theme-primary-color;
+    @media only screen and (max-width: 1023px) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+    @media only screen and (max-width: 767px) {
+      @include flex-wrap(wrap);
+      div{
+        width: 100%;
+        display: block;
+        text-align: left;
+      }
+    }
+    @media only screen and (max-width: 666px) {
+      @include flex-wrap(nowrap);
+      div{
+        width: auto;
+      }
+    }
+    .author{
+      + .date{
+        margin-left: 18px;
+        @media only screen and (max-width: 767px) {
+          margin-left: 0px;
+          margin-top: 5px;
+        }
+        @media only screen and (max-width: 666px) {
+          margin-top: 0px;
+          margin-left: 18px;
+        }
+      }
+    }
+    svg{
+      width: 15px;
+      height: 15px;
+      @media only screen and (max-width: 1023px) {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+// Home page Style End
+
+// Instagram Style Start
+.instagrame{
+  @media only screen and (max-width: 1023px) {
+    &.m-b-50{
+      margin-bottom: 30px;
+    }
+  }
+  .page-heading{
+    font-size: 24px;
+    @include display-flex(flex);
+    @include justify-content(center);
+    @include align-item(center);
+    svg{
+      margin-right: 5px;
+    }
+  }
+}
+.home-instagram{
+  @media only screen and (max-width: 1023px) {
+    &.m-t-20{
+      margin-top: 5px;
+    }
+  }
+  @media only screen and (max-width: 567px) {
+    &.m-t-20{
+      margin-top: 11px;
+    }
+  }
+}
+.insta-item{
+  padding: 10px;
+  @media only screen and (max-width: 567px) {
+    padding: 5px;
+  }
+}
+.insta-item-wrap{
+  @media only screen and (max-width: 567px) {
+    width: 180px;
+  }
+}
+.animation{
+  display: block;
+  position: relative;
+  &:before{
+    opacity: 0;
+    content: "";
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    top: 50%;
+    left: 50%;
+    margin-top: -21px;
+    margin-left: -21px;
+    background: url('../icons/instagram-feeds.svg')no-repeat;
+    background-size: 100%;
+    z-index: 1;
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    background: $theme-primary-color;
+    opacity: 0;
+  }
+  &:hover{
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    &:before{
+      opacity: 1;
+    }
+    &:after{
+      opacity: 0.7;
+    }
+  }
+}
+
+// Instagrame Style End
+
+// usp section Start
+
+.usp-section{
+  background: stencilColor("container-fill-dark");
+  @media only screen and (max-width: 1023px) {
+    &.m-b-60{
+      margin-bottom: 40px;
+    }
+  }
+  ul{
+    margin: 0px;
+    @include display-flex(flex);
+    @include justify-content(center);
+    @media only screen and (max-width: 1023px) {
+      @include flex-wrap(wrap);
+    }
+    li{
+      padding: 30px 15px;
+      margin: 0px;
+      width: 25%;
+      @media only screen and (max-width: 1023px) {
+        width: 50%;
+        padding: 0px;
+      }
+      &:first-child{
+        padding-left: 0px;
+      }
+      &:last-child{
+        padding-right: 0px;
+      }
+      @media only screen and (max-width: 1023px) {
+        &.first{
+          padding-top: 20px;
+          padding-right: 20px;
+          padding-bottom: 20px;
+          padding-left: 0px;
+        }
+        &.second{
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+        &.third{
+          padding-bottom: 20px;
+          padding-right: 20px;
+        }
+        &.fourth{
+          padding-bottom: 20px;
+        }
+      }
+      @media only screen and (max-width: 567px) {
+        &.first{
+          padding-top: 10px;
+          padding-right: 10px;
+          padding-bottom: 10px;
+          padding-left: 0px;
+        }
+        &.second{
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        &.third{
+          padding-bottom: 10px;
+          padding-right: 10px;
+        }
+        &.fourth{
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+  &.usp-section-none{
+    display: none;
+  }
+}
+.usp-block{
+  background: $theme-white-color;
+  @include display-flex(flex);
+  @include align-item(center);
+  @include justify-content(center);
+  padding: 18px 10px;
+  height: 100%;
+  @media only screen and (max-width: 1279px) {
+    @include flex-wrap(wrap);
+  }
+  @media only screen and (max-width: 567px) {
+    padding: 12px 10px;
+  }
+  .usp-img{
+    max-width: 45px;
+    text-align: right;
+    margin-right: 14px;
+    width: 100%;
+    @media only screen and (max-width: 1279px) {
+      margin: 0px;
+    }
+  }
+  .usp-detail{
+    @media only screen and (max-width: 1279px) {
+      width: 100%;
+      text-align: center;
+      margin-top: 8px;
+    }
+    h5{
+      margin: 0px;
+      text-transform: capitalize;
+      color: $theme-primary-color;
+      line-height: 22px;
+      font-weight: 500;
+      @media only screen and (max-width: 1919px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    p{
+      margin: 0px;
+      color: $theme-light-gray-color;
+      line-height: 22px;
+      @media only screen and (max-width: 1919px) {
+        font-size: 13px;
+        line-height: 18px;
+      }
+      @media only screen and (max-width: 567px) {
+        font-size: 11px;
+        line-height: 15px;
+      }
+    }
+  }
+}
+.type-cart, .type-login, .type-createaccount, .type-account_orderstatus, .type-account_returns, .type-account_inbox, .type-account_addressbook, .type-account_paymentmethods, .type-wishlists, .type-account_recentitems, .type-editaccount{
+  .usp-section{
+    display: none;
+  }
+}
+
+// usp section End
+
+// Login page Style Start
+.login{
+  margin:  0 auto;
+}
+
+.login-row{
+  margin-top: 50px;
+  @include display-flex(flex);
+  @include align-item(center);
+  @include justify-content(space-between);
+  @media only screen and (max-width: 767px) {
+    flex-flow: column;
+  }
+  .form-actions{
+    @include display-flex(flex);
+    @include align-item(center);
+    @include justify-content(flex-start);
+    .button{
+      width: auto;
+      margin: 0px;
+      margin-right: 20px;
+    }
+  }
+}
+.login-form{
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    padding: 0px;
+  }
+  .form-label{
+    font-size: 16px;
+    color: $theme-black-color;
+  }
+  .forgot-password{
+    font-size: 15px;
+    width: auto;
+    margin: 0px;
+  }
+}
+.new-customer{
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    padding: 0px;
+  }
+}
+.new-customer-fact-list{
+  margin-left: 0px;
+}
+.new-customer-fact{
+  font-size: 15px;
+}
+.new-customer-intro{
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+// Login page Style End
+
+// Account page Style Start
+
+.navBar--sub{
+  @media only screen and (max-width: 1023px) {
+    margin-bottom: 20px;
+  }
+  &.navBar--account{
+    display: block;
+  }
+  .navBar-item{
+    font-size: 16px;
+    @media only screen and (max-width: 1023px) {
+      font-size: 14px;
+    }
+    @media only screen and (max-width: 1279px) {
+      margin: 0 7px;
+    }
+    @media only screen and (max-width: 1023px) {
+      padding: 10px;
+      border: $theme-border-color;
+      margin-top: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 15px;
+      text-align: left;
+      .navBar-action{
+        font-size: 14px;
+      }
+      &.search-result-content{
+        margin-bottom: 0px;
+      }
+    }
+    &.is-active{
+      color: $theme-primary-color;
+      border-bottom: 1px solid $theme-primary-color;
+      @media only screen and (max-width: 1023px) {
+        font-size: 14px;
+        border: 1px solid $theme-primary-color;
+      }
+    }
+    .toggleLink-text{
+      font-size: 16px;
+      @media only screen and (max-width: 1023px) {
+        font-size: 14px;
+      }
+    }
+  }
+  .navBar-action{
+    font-size: 16px;
+    color: $theme-light-gray-color;
+    @media only screen and (max-width: 1023px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.account--fixedLarge{
+  @media only screen and (max-width: 1919px) {
+    width: 100%;
+  }
+}
+
+.account{
+  h3{
+    line-height: 26px;
+  }
+}
+
+.account-product--alignMiddle{
+  .account-product-figure{
+    left: 0;
+  }
+  .account-product-checkItem{
+    left: 0;
+  }
+  .account-product-body{
+    padding-left: 10px;
+  }
+  .account-product-figure{
+    > img{
+      height: auto;
+    }
+  }
+}
+.account-product-figure{
+  display: block;
+  &:after{
+    display: none;
+  }
+  > img{
+    // height: 100%;
+  }
+}
+
+.account-orderStatus-label{
+  background: $theme-primary-color;
+}
+
+.account-product-title{
+  margin-bottom: 10px;
+}
+.account-message{
+  p{
+    margin-bottom: 0px;
+    + p{
+      margin-top: 15px;
+    }
+  }
+}
+
+.account{
+  .pagination{
+    margin-top: 30px;
+    color: $theme-light-gray-color;
+    .pagination-list{
+      margin-bottom: 0px;
+    }
+  }
+  .product{
+    // @include display-flex(flex);
+    // flex-flow: column;
+    .card{
+      width: 100%;
+    }
+    .form{
+      text-align: center;
+      margin: 0px;
+      .button{
+        margin-top: 15px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+.account-content{
+  h2{
+    font-size: 20px;
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 10px;
+    }
+  }
+  .form-field{
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 15px;
+    }
+  }
+  .form-actions{
+    .button{
+      @media only screen and (max-width: 767px) {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+.addressList{
+  @media only screen and (max-width: 1023px) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .address{
+    margin-bottom: 0px;
+  }
+}
+
+.return-msg{
+  text-align: center;
+}
+
+.table--line{
+  .table-thead{
+    border-color: $theme-border-color;
+  }
+}
+
+.form-actions .button + .button, .form-actions .button + input, .form-actions .button + a, .form-actions input + .button, .form-actions input + input, .form-actions input + a, .form-actions a + .button, .form-actions a + input, .form-actions a + a{
+  @media only screen and (max-width: 567px) {
+    margin-top: 0px;
+  }
+}
+
+.type-createaccount, .type-shippingaddressform{
+  .form-row{
+    margin: 0px;
+  }
+  .g-recaptcha{
+    padding-left: 0.75rem;
+  }
+  .form-actions{
+    .button{
+      width: auto;
+    }
+  }
+}
+
+.type-wishlist{
+  .productGrid{
+    .product{
+      padding-bottom: 60px;
+      margin-bottom: 15px;
+      // display: flex;
+      position: relative;
+      // flex-flow: column;
+      // flex-direction: column;
+      .crad{
+        width: 100%;
+      }
+      .form{
+        margin-top: auto;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+      }
+    }
+  }
+}
+
+// Account page Style End
+
+// Blog Page style Start
+
+.blog-thumbnail-custom{
+  // max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  a{
+    display: block;
+  }
+}
+.blog-date, .blog-author{
+  margin-bottom: 10px;
+}
+.blog-title{
+  line-height: 26px;
+}
+
+// Blog page style End
+
+
+// Compare page style Start
+.type-compare{
+  .header{
+      z-index: inherit;
+      &.stuck{
+        z-index: 99;
+      }
+      .header-main{
+        z-index: inherit;
+      }
+  }
+}
+
+.compare-table-wrap{
+  overflow: auto;
+  .compareTable{
+    @media only screen and (max-width: 1023px) {
+      width: 800px;
+    }
+  }
+}
+
+  .compareTable-product{
+    .card{
+      .card-figure{
+        overflow: visible;
+        a{
+          height: 30px;
+          position: absolute;
+          right: -1rem;
+          top: -1rem;
+          transition: background-color .15s ease;
+          width: 30px;
+          svg{
+            margin-top: 9px;
+          }
+        }
+      }
+      .card-title{
+        margin-bottom: 12px;
+        margin-top: 10px;
+      }
+      &:hover{
+        .card-title{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    .compareTable-removeProduct{
+      &:hover{
+        background: $theme-primary-color;
+        .icon{
+          fill: $theme-white-color;
+        }
+      }
+    }
+    .icon{
+      fill: $theme-primary-color;
+      height: 14px;
+      width: 14px;
+      margin-top: 10px;
+    }
+  }
+  .compareTable{
+    border-top: 0px;
+  }
+  .compareTable-action{
+    .button{
+      text-transform: uppercase;
+    }
+  }
+  .compareTable-headingText{
+    font-weight: 500;
+    color: $theme-primary-color;
+  }
+// Compare page style End
+
+
+// Site map style Start
+
+.sitemap-block-main{
+  @include display-flex(flex);
+  @include align-item(flex-start);
+  @include justify-content(space-between);
+  flex-flow: row;
+  @media only screen and (max-width: 767px) {
+    flex-flow: column;
+  }
+  .block-title{
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  .sitemap-block{
+    width: 33.33%;
+    padding: 0 15px;
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  ul{
+    margin-left: 0px;
+  }
+  .show-more{
+    &:before{
+      display: none;
+    }
+    a{
+      font-style: italic;
+    }
+  }
+}
+// Sitemap style End
+
+// Gift-certificate style Start
+.gift-certificate-form{
+  .form-fieldset{
+    .form-field {
+        padding: 0;
+    }
+    .form-field-group {
+      padding: 15px .75rem;
+    }
+  }
+}
+
+.giftWrapping-form{
+  .form-actions{
+    margin-bottom: 20px;
+  }
+}
+// Gift-certificate style End
+
+// contact page style Start
+  #contact-us-success{
+    text-align: center;
+  }
+// contact page style end
+
+.changelog{
+  li{
+    list-style: outside;
+  }
+}

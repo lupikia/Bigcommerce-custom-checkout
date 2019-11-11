@@ -1,0 +1,63 @@
+{{#if product.description}}
+<section class="toggle">
+  <h4 class="toggle-title">
+      <a href="#tab-description" class="toggleLink is-open" data-collapsible>
+        <svg class="icon--name"><use xlink:href="#icon-product-description"></use></svg>
+        <span>{{lang 'products.description'}}</span>
+        <svg class="toggle-down-arrow"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+      </a>
+  </h4>
+  <div class="toggle-content is-open" id="tab-description">
+    {{{product.description}}}
+  </div>
+</section>
+{{/if}}
+
+{{#if product.custom_fields}}
+    <section class="toggle">
+      {{#if product.custom_fields}}
+      <h4 class="toggle-title">
+          <a href="#tab-custom_fields" class="toggleLink" data-collapsible>
+            <svg class="icon--name"><use xlink:href="#icon-product-other-details"></use></svg>
+            <span>{{lang 'products.other-details'}}</span>
+            <svg class="toggle-down-arrow"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+          </a>
+      </h4>
+      {{/if}}
+      {{#if product.custom_fields}}
+        <div class="toggle-content clearfix" id="tab-custom_fields">
+          {{#each product.custom_fields}}
+              <dt class="productView-info-name">{{name}}:</dt>
+              <dd class="productView-info-value">{{{value}}}</dd>
+          {{/each}}
+        </div>
+      {{/if}}
+    </section>
+{{/if}}
+
+{{#if product.warranty}}
+    <section class="toggle">
+      {{#if product.warranty}}
+      <h4 class="toggle-title">
+          <a href="#tab-warranty" class="toggleLink" data-collapsible>
+            <svg class="icon--name"><use xlink:href="#icon-product-warranty"></use></svg>
+            <span>{{lang 'products.warranty'}}</span>
+            <svg class="toggle-down-arrow"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+          </a>
+      </h4>
+      {{/if}}
+      {{#if product.warranty}}
+        <div class="toggle-content" id="tab-warranty">
+          {{{product.warranty}}}
+        </div>
+      {{/if}}
+    </section>
+{{/if}}
+
+{{#if product.videos.list.length}}
+        {{> components/products/videos product.videos}}
+{{/if}}
+
+{{#if theme_settings.show_product_reviews_tabs}}
+  {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+{{/if}}

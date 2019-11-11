@@ -1,0 +1,42 @@
+  {{#if reviews.total}}
+  <section class="toggle productReviews" id="product-reviews" data-product-reviews>
+      <h4 class="toggle-title">
+          {{#if theme_settings.show_product_reviews_tabs}}
+              <a class="toggleLink" data-collapsible href="#productReviews-content">
+                <svg class="icon--name"><use xlink:href="#icon-product-review"></use></svg>
+                <span>{{lang 'products.reviews.review_header' total=reviews.total}}</span>
+                <svg class="toggle-down-arrow"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+              </a>
+          {{/if}}
+      </h4>
+      <div class="toggle-content" id="productReviews-content" aria-hidden="false">
+          <ul class="productReviews-list" id="productReviews-list">
+              {{#each reviews.list}}
+              <li class="productReview">
+                  <article itemprop="review" itemscope itemtype="http://schema.org/Review">
+                      <header>
+                          <span class="productReview-rating rating--small" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                              {{> components/products/ratings rating=rating}}
+                              <span class="productReview-ratingNumber" itemprop="ratingValue">{{ rating }}</span>
+                          </span>
+                          <h5 itemprop="name" class="productReview-title">{{ title }}</h5>
+                          {{#if name}}
+                              <meta itemprop="author" content="{{name}}">
+                              <p class="productReview-author">
+                                  {{lang 'products.reviews.post_on_by' date=date name=name }}
+                              </p>
+                          {{else}}
+                              <p class="productReview-author">
+                                  {{lang 'products.reviews.post_on_by' date=date name=(lang 'products.reviews.anonymous_poster')}}
+                              </p>
+                          {{/if}}
+                      </header>
+                      <p itemprop="reviewBody" class="productReview-body">{{nl2br text}}</p>
+                  </article>
+              </li>
+              {{/each}}
+          </ul>
+          {{> components/common/paginator pagination.reviews}}
+      </div>
+  </section>
+  {{/if}}

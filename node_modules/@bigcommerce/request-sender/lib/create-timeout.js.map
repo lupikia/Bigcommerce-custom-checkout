@@ -1,0 +1,1 @@
+{"version":3,"file":"create-timeout.js","sourceRoot":"","sources":["../src/create-timeout.ts"],"names":[],"mappings":";;;AAAA,8DAAgC;AAEhC,uBAAsC,KAAc;IAChD,OAAO,IAAI,iBAAO,CAAC,KAAK,CAAC,CAAC;AAC9B,CAAC;AAFD,gCAEC","sourcesContent":["import Timeout from './timeout';\n\nexport default function createTimeout(delay?: number): Timeout {\n    return new Timeout(delay);\n}\n"]}

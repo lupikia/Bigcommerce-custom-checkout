@@ -1,0 +1,11 @@
+<div data-animation-in="fadeIn" class="animated fadeIn heroCarousel-content{{#unless show_background}} heroCarousel-content--empty{{/unless}}">
+    <h1 data-animation-in="slideInUp" class="animated slideInUp heroCarousel-title">{{{heading}}}</h1>
+    <p data-animation-in="slideInUp" class="animated slideInUp  heroCarousel-description">{{{text}}}</p>
+    {{#if button_text}}
+        <span data-animation-in="slideInUp" class="animated slideInUp heroCarousel-action button button--primary button--large">
+          <span class="heroCarousel-action-inn">
+            {{button_text}}<svg ><use xlink:href="#icon-arrow-slider"></use></svg>
+          </span>
+        </span>
+    {{/if}}
+</div>

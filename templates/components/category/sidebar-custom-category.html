@@ -1,0 +1,17 @@
+{{#if categories}}
+    <div class="sidebarBlock mob-hide">
+        <h5 class="sidebarBlock-heading sidebar-toggle-title">{{lang 'footer.categories'}}
+          <div class="accordion-navigation-actions">
+              <svg class="down"><use xlink:href="#icon-keyboard-arrow-down"></use></svg>
+              <svg class="up"><use xlink:href="#icon-keyboard-arrow-up"></use></svg>
+          </div>
+        </h5>
+        <ul class="navList navList-treeview">
+          {{#each categories}}
+            <li class="navList-item {{#if is_active '==' true}}ActivePage{{/if}}">
+              {{> components/psdc-common/navigation-list}}
+            </li>
+          {{/each}}
+        </ul>
+    </div>
+{{/if}}

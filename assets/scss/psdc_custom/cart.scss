@@ -1,0 +1,202 @@
+.cart-header{
+  .cart-header-item{
+    color: $theme-primary-color;
+    font-weight: 500;
+    padding: 15px 10px;
+    font-size: 16px;
+  }
+}
+
+.cart-list{
+  border-color: $theme-border-color;
+  @media only screen and (max-width: 1023px) {
+    border-top: 0px;
+  }
+  .form-increment{
+    .form-input--incrementTotal{
+      height: 50px;
+      width: 50px!important;
+      font-size: 14px;
+      text-align: center;
+      border: $theme-border-color;
+      border-radius: 0;
+      font-weight: 300;
+      padding: 5px;
+      float: left;
+    }
+    .button{
+      display: block;
+      border: none;
+      padding: 0;
+      background: 0 0;
+      font-size: 10px;
+      i{
+        line-height: 25px;
+        text-align: center;
+        width: 23px;
+        height: 25px;
+        display: block;
+        border: $theme-border-color;
+        cursor: pointer;
+        border-radius: 0;
+        border-left: none;
+      }
+      + .button{
+        i{
+          border-top: 0px;
+        }
+      }
+      &:hover{
+        background: $theme-button-hover-background-color;
+        i{
+          svg{
+            fill: $theme-white-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cart-item-figure{
+  &:after{
+    display: none;
+  }
+  .cart-item-image-1, .cart-item-fixed-image{
+    max-width: 90px;
+    max-height: 90px;
+  }
+}
+
+.cart-item-name{
+  a{
+    color: $theme-primary-color;
+    font-weight: 500;
+    &:hover{
+      color:$theme-light-gray-color;
+    }
+  }
+}
+.cart-item-option-title{
+  color: $theme-primary-color;
+  font-weight: 500;
+}
+
+.cart-item-value, .cart-total-label{
+  color: $theme-primary-color;
+  font-size: 16px;
+}
+.cart-item-value{
+  font-weight: 500;
+}
+
+.cart-remove{
+  width: 20px;
+  height: 20px;
+  @include display-flex(flex);
+  @include align-item(center);
+  @include justify-content(center);
+  padding: 6px;
+  > svg{
+    fill: $theme-primary-color;
+  }
+  &:hover{
+    background: $theme-primary-color;
+    svg{
+      fill: $theme-white-color;
+    }
+  }
+}
+
+.cart-item-info{
+  @media only screen and (max-width: 1023px) {
+    + .cart-item-info{
+      margin-top: 0px;
+    }
+  }
+  @media only screen and (max-width: 567px) {
+    margin-bottom: 10px;
+  }
+  p{
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0px;
+    @media only screen and (max-width: 567px) {
+      margin-left: 23px;
+    }
+  }
+  .cart-remove{
+    @media only screen and (max-width: 666px) {
+      margin-left: 3px;
+    }
+  }
+}
+
+
+.estimator-form{
+  .button--primary{
+    @media only screen and (max-width: 479px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.coupon-form, .cart-gift-certificate-form{
+  .button{
+    @media only screen and (max-width: 479px) {
+      width: 100%;
+      margin-left: 0px;
+      margin-top: 10px;
+    }
+  }
+  .form-input{
+    @media only screen and (max-width: 479px) {
+      width: 100%;
+    }
+  }
+}
+
+.cart-total{
+    margin-bottom: 0px;
+    padding: 0 10px;
+    + .cart-total{
+      border-top: $theme-border-color;
+    }
+  .cart-total-label, .cart-total-value{
+    padding: 15px 0;
+    width: 50%;
+  }
+  .cart-total-label{
+    @media only screen and (max-width: 1023px) {
+      text-align: left;
+    }
+  }
+  .cart-total-value{
+    @media only screen and (max-width: 567px) {
+      text-align: right;
+    }
+  }
+  .form-select, .form-input{
+    height: auto;
+    background-position: right 5px top 12px;
+    background-size: 20px;
+    padding: 12px 30px 12px 15px;
+    line-height: 18px;
+    @media only screen and (max-width: 767px) {
+      padding: 9px 30px 9px 10px;
+      background-position: right 5px top 8px;
+    }
+  }
+}
+.cart-total-grandTotal{
+  font-weight: 500;
+}
+.coupon-code-add, .coupon-code-cancel, .shipping-estimate-show, .shipping-estimate-hide, .gift-certificate-add, .gift-certificate-cancel{
+  font-style: italic;
+}
+.cart-additionalCheckoutButtons{
+  .apple-pay-checkout-button {
+      margin-top: 20px;
+  }
+}

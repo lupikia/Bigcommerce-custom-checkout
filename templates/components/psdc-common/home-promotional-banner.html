@@ -1,0 +1,42 @@
+{{#if theme_settings.home-promotional-banner}}
+  <div class="home-promotional-banner m-b-60 {{#if carousel}}carousel-open{{/if}}">
+  <div class="banner-main-block">
+      {{#if theme_settings.bannerimagefirst}}
+        <div class="banner-block banner-block-half banner-hover p-l-15 p-r-15">
+          <a href="{{theme_settings.bannerlinkfirst}}">
+            <img src="/product_images/uploaded_images/{{theme_settings.bannerimagefirst}}" alt="">
+          </a>
+        </div>
+      {{/if}}
+      {{#or theme_settings.bannerimagesecond theme_settings.bannerimagethird theme_settings.bannerimagefour}}
+        <div class="banner-block banner-block-half p-l-15 p-r-15">
+          {{#if theme_settings.bannerimagesecond}}
+          <div class="banner-block banner-block-full banner-hover banner-block-2">
+            <a href="{{theme_settings.bannerlinksecond}}">
+              <img src="/product_images/uploaded_images/{{theme_settings.bannerimagesecond}}" alt="">
+            </a>
+          </div>
+          {{/if}}
+          {{#or theme_settings.bannerimagethird theme_settings.bannerimagefour}}
+          <div class="banner-block banner-block-full display-flex align-item-start justify-content-sb banner-block-3">
+            {{#if theme_settings.bannerimagethird}}
+            <div class="banner-block banner-block-half banner-hover p-r-15">
+              <a href="{{theme_settings.bannerlinkthird}}">
+                <img src="/product_images/uploaded_images/{{theme_settings.bannerimagethird}}" alt="">
+              </a>
+            </div>
+            {{/if}}
+            {{#if theme_settings.bannerimagefour}}
+            <div class="banner-block banner-block-half banner-hover p-l-15">
+              <a href="{{theme_settings.bannerlinkfour}}">
+                <img src="/product_images/uploaded_images/{{theme_settings.bannerimagefour}}" alt="">
+              </a>
+            </div>
+            {{/if}}
+          </div>
+          {{/or}}
+        </div>
+        {{/or}}
+  </div>
+</div>
+{{/if}}

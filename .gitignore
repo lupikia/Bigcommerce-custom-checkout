@@ -1,0 +1,3 @@
+#configuration
+*.stencil
+*.node_modules

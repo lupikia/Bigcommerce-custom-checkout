@@ -1,0 +1,89 @@
+<section class="productCarousel slick-not-apply-{{products.length}}" {{#gt products.length 1}}
+    data-list-name="{{list}}"
+    data-slick='{
+        "dots": false,
+        "infinite": false,
+        "mobileFirst": true,
+        "slidesToShow": {{ columns }},
+        "slidesToScroll": 3,
+        "responsive": [
+                {
+                    "breakpoint": 1440,
+                    "settings": {
+                        "slidesToScroll": 1,
+                        "slidesToShow": 4
+                    }
+                },
+                {
+                    "breakpoint": 1279,
+                    "settings": {
+                      "slidesToScroll": 1,
+                      "slidesToShow": 4
+                    }
+                },
+                {
+                    "breakpoint": 1023,
+                    "settings": {
+                      "slidesToScroll": 1,
+                      "slidesToShow": 3
+                    }
+                },
+                {
+                    "breakpoint": 769,
+                    "settings": {
+                      "slidesToScroll": 2,
+                      "slidesToShow": 3,
+                      "dots": false,
+                      "arrows": false
+                    }
+                },
+                {
+                    "breakpoint": 666,
+                    "settings": {
+                      "slidesToScroll": 2,
+                      "slidesToShow": 2.5,
+                      "draggable": true,
+                      "dots": false,
+                      "arrows": false,
+                      "autoplay": true,
+                      "autoplaySpeed": 4000
+                    }
+                },
+                {
+                    "breakpoint": 567,
+                    "settings": {
+                      "slidesToScroll": 2,
+                      "slidesToShow": 2.5,
+                      "dots": false,
+                      "arrows": false
+                    }
+                },
+                {
+                    "breakpoint": 479,
+                    "settings": {
+                      "slidesToScroll": 1,
+                      "slidesToShow": 1.5,
+                      "draggable": true,
+                      "dots": false,
+                      "arrows": false
+                    }
+                },
+                {
+                    "breakpoint": 319,
+                    "settings": {
+                      "slidesToScroll": 1,
+                      "slidesToShow": 1.5,
+                      "draggable": true,
+                      "dots": false,
+                      "arrows": false
+                    }
+                }
+            ]
+    }'
+{{/gt}}>
+    {{#each products}}
+    <div class="productCarousel-slide">
+            {{> components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1) show_rating=../settings.show_product_rating}}
+    </div>
+    {{/each}}
+</section>

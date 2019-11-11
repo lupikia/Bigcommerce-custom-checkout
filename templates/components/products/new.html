@@ -1,0 +1,12 @@
+
+<div class="section-title">
+  <h2 class="page-heading">{{lang 'products.new' }}</h2>
+  {{#if theme_settings.NewSubTitle}}
+    <p class="page-sub-heading">{{theme_settings.NewSubTitle}}</p>
+  {{/if}}
+</div>
+{{#if settings.data_tag_enabled}}
+    {{> components/products/carousel products=products list="New Products"}}
+{{else}}
+    {{> components/products/carousel products=products}}
+{{/if}}

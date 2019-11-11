@@ -1,0 +1,40 @@
+{{#if theme_settings.subcategory}}
+  {{#if category}}
+    <div class="subcategory-wrap">
+      {{#if category.subcategories}}
+      <div class="sub-category-headinig">
+        {{#unless theme_settings.hide_category_page_heading }}
+            <h3>Subcategory of {{category.name}}</h3>
+        {{/unless}}
+      </div>
+    {{/if}}  
+
+    {{#if category.subcategories}}
+      <div class="sub-category-wrap">
+          <ul class="sub-category-block custom-row">
+            {{#each category.subcategories}}
+            <li class="column sub-category-item">
+                <div class="category-image-inner">
+                  <div class="sub-category-img-block banner-hover">
+                    <a href="{{url}}" alt="{{name}}" title="{{name}}">
+                      <div class="sub-category-img {{#if image}}show-image{{else}}no-img{{/if}}">
+                      {{#if image}}
+                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'sub-category-img'}}" alt="" />
+                      {{else}}
+                        <img class="sub-no-img lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'assets/img/noImage.jpg'}}" alt="No Image" title="No Image">
+                      {{/if}}
+                      </div>
+                    </a>
+                  </div>
+                  <p class="sub-category-name">
+                    <a href="{{url}}">{{name}}</a>
+                  </p>
+                </div>
+            </li>
+            {{/each}}
+          </ul>
+      </div>
+      {{/if}}
+    </div>
+  {{/if}}
+{{/if}}

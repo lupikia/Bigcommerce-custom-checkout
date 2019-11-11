@@ -1,0 +1,27 @@
+<div class="wishlist wishlist-popup modal-body">
+  <form class="form form-wishlist form-action" method="post" id="{{#if schema}}ProductWishlist{{else}}QuickViewProductWishlist{{/if}}" action="{{product.add_to_wishlist_url}}" data-wishlist-add>
+      <div class="form-action">
+
+          <input type="hidden" name="variation_id" value="">
+          {{# if customer.wishlists.length '>=' 0 }}
+           <div id="drop1" data-dropdown-content>
+               <div style="padding: 5px;" class="wishlist_dropdownbox">
+                  {{# if customer.wishlists.length '>' 0 }}
+                   {{#each customer.wishlists}}
+                     <input class="wishlistid button button--small button--primary" formaction="/wishlist.php?action=add&wishlistid={{id}}&product_id={{../product.id}}" type="submit" value="{{name}}">
+                   {{/each}}
+                   {{else}}
+                   <p>Please create a new Wishlist</p>
+                   {{/if}}
+                   <div class="wishlist-popup-btn">
+                     {{#if customer}}
+                       <a data-wishlist class="button" href="/wishlist.php?action=addwishlist&product_id={{../product.id}}">{{lang 'account.wishlists.create_new'}}</a>
+                     {{/if}}
+
+                   </div>
+               </div>
+           </div>
+          {{/if}}
+      </div>
+  </form>
+</div>

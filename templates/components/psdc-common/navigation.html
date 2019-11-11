@@ -1,0 +1,85 @@
+<nav class="navUser">
+    <ul class="navUser-section navUser-section--alt account-section sf-menu">
+      {{> components/psdc-common/header-account-menu}}
+
+    {{#if theme_settings.EnableProductCompare}}
+      <li class="navUser-item navUser-item-compare">
+          <a class="navUser-action navUser-item--compare needsclick" title="Compare" href="{{urls.compare}}" data-compare-nav>
+            <svg><use xlink:href="#icon-compare"></use></svg>
+            <span class="countPill countPill--positive"></span>
+          </a>
+      </li>
+    {{/if}}
+
+      <li class="navUser-item navUser-search">
+          <a class="navUser-action navUser-action--quickSearch" href="javascript:void(0);" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false"><svg class="search-icon"><use xlink:href="#icon-search"></use></svg> <svg class="search-close"><use xlink:href="#icon-close"></use></svg></a>
+      </li>
+
+
+      <li class="navUser-item navUser-item--cart">
+          <a  class="navUser-action"
+              data-cart-preview
+              data-dropdown="cart-preview-dropdown"
+              data-options="align:right"
+              href="{{urls.cart}}">
+              <span class="navUser-item-cartLabel">
+                <svg><use xlink:href="#icon-cart"></use></svg>
+              </span> <span class="countPill cart-quantity"></span>
+          </a>
+          <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+      </li>
+    </ul>
+
+</nav>
+
+<div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+    {{> components/psdc-common/quick-search headerSearch='headerSearch'}}
+</div>
+
+<div id="headerSidebar" class="header-side-bar">
+<div class="header-side-bar-inn">
+  <div class="close">
+    <a class="close-icon" href="javascript:void(0);"><svg><use xlink:href="#icon-close"></use></svg></a>
+  </div>
+  <div class="category headerSidebar-block">
+    <h5 class="sidebarBlock-heading">{{lang 'footer.categories'}}</h5>
+    <ul class="navList navList-treeview">
+        {{#each categories}}
+            <li class="navPages-item">
+              {{> components/psdc-common/navigation-list}}
+            </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="webpages headerSidebar-block">
+    <h5 class="sidebarBlock-heading">{{lang 'footer.navigate'}}</h5>
+    <ul class="navList navList-treeview">
+      {{#each pages}}
+           <li class="navPages-item navPages-item-page">
+             {{> components/psdc-common/navigation-list}}
+           </li>
+       {{/each}}
+    </ul>
+  </div>
+  <div class="brand headerSidebar-block">
+    <h5 class="sidebarBlock-heading">{{lang 'footer.brands'}}</h5>
+    <ul class="navList navList-treeview">
+      {{#each shop_by_brand}}
+          {{#if @index '<' '5' }}
+            <li class="navPages-item">
+                <a class="navPages-action" href="{{url}}">
+                  <span class="nav-arrow"><svg class=""><use xlink:href="#icon-m-right"></use></svg></span>
+                  {{name}}
+                </a>
+            </li>
+          {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="brand headerSidebar-block mobile-currancy">
+    <h5 class="sidebarBlock-heading">{{lang 'common.currency' code=currency_selector.active_currency_code}} <span class="flag">{{{lang 'common.currency-flag' flag=currency_selector.active_currency_flag}}}</span><span class="code">{{lang 'common.currency-code' code=currency_selector.active_currency_code}}</span></h5>
+
+  </div>
+</div>
+
+</div>

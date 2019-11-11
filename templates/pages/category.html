@@ -1,0 +1,89 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+{{#or if hide_category_page_heading if category.description}}
+  <div class="category-banner-section">
+    <div class="category-left-section {{#if banners.top}}visible-top-banner{{/if}}">
+      {{#unless theme_settings.hide_category_page_heading }}
+          <h1 class="page-heading">{{category.name}}</h1>
+      {{/unless}}
+      {{{category.description}}}
+    </div>
+    {{#if banners.top}}
+      <div class="banners category-right-section" data-banner-location="top">
+          {{#each (limit banners.top_metadata 1)}}
+          <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+              <div data-event-type="promotion-click">
+                  {{{this.content}}}
+              </div>
+          </div>
+          {{/each}}
+      </div>
+    {{/if}}
+  </div>
+{{/or}}
+
+<div class="page">
+    {{#if category.faceted_search_enabled}}
+        <aside class="page-sidebar">
+          {{> components/category/sidebar-custom-category}}
+          <div id="faceted-search-container">
+            {{> components/category/sidebar}}
+          </div>
+        </aside>
+    {{else if category.subcategories}}
+        <aside class="page-sidebar">
+            {{> components/category/sidebar-custom-category}}
+          <div id="faceted-search-container">
+            {{> components/category/sidebar}}
+          </div>
+        </aside>
+    {{else if category.shop_by_price}}
+        {{#if theme_settings.shop_by_price_visibility}}
+             <aside class="page-sidebar">
+                {{> components/category/sidebar-custom-category}}
+               <div id="faceted-search-container">
+                {{> components/category/sidebar}}
+              </div>
+            </aside>
+        {{/if}}
+    {{/if}}
+
+    <main class="page-content">
+      {{> components/category/sub-category-block}}
+      <div id="product-listing-container">
+        {{#if category.products}}
+            {{> components/category/product-listing}}
+        {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+        {{/if}}
+      </div>
+      {{#if banners.bottom}}
+        <div class="banners m-t-30" data-banner-location="bottom">
+            <div class="banner">
+                {{{limit banners.bottom 1}}}
+            </div>
+        </div>
+      {{/if}}
+    </main>
+</div>
+
+{{/partial}}
+{{> layout/base}}

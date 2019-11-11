@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://themes.bigcommerce.com/theme_packages/config",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "price": {
+          "type": "integer"
+        },
+        "author_name": {
+          "type": "string"
+        },
+        "author_email": {
+          "type": "string"
+        },
+        "author_support_url": {
+          "type": "string"
+        },
+        "documentation_url": {
+          "type": "string"
+        },
+        "composed_image": {
+          "type": "string"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "author_name",
+        "author_email",
+        "author_support_url"
+      ]
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "_images": {
+          "type": "object",
+          "patternProperties": {
+            ".+": {
+              "type": "object",
+              "properties": {
+                "width": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "read_only_files": {
+      "type": "array"
+    },
+    "variations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "desktop_screenshot": {
+                "type": "string"
+              },
+              "mobile_screenshot": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "demo_url": {
+                "type": "string"
+              },
+              "optimized_for": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["arts_crafts", "animals_pets", "automotive_industrial", "electronics_computers", "fashion_jewelry", "food_beverage", "gifts_specialty", "health_beauty", "home_garden", "books_entertainment", "sports_recreation", "toys_games", "multi_purpose", "chrome_firefox_safari_ie_10", "mobile_tablet_desktop", "sales_discounts", "wholesale", "single_product", "large_catalog", "mobile", "clothing", "cosmetics", "home_appliances", "home_furnishings", "movies", "music", "digital_downloads", "outdoor_sports", "hunting_fishing", "video_games"]
+                },
+                "uniqueItems": true,
+                "minItems": 0
+              },
+              "industries": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["arts_crafts", "animals_pets", "automotive_industrial", "electronics_computers", "fashion_jewelry", "food_beverage", "gifts_specialty", "health_beauty", "home_garden", "books_entertainment", "sports_recreation", "toys_games"]
+                },
+                "uniqueItems": true,
+                "minItems": 0
+              }
+            },
+            "required": [
+              "description"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "id",
+          "meta"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 4
+    }
+  },
+  "required": [
+    "meta"
+  ],
+  "additionalProperties": true
+}
