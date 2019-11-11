@@ -20,6 +20,7 @@ export default class Checkout extends React.PureComponent {
 
         this.service = createCheckoutService();
         console.log("stuff",this.service);
+        console.log("Checkout",this.service.selectShippingOption);
         this.state = {
             isPlacingOrder: false,
             showSignInPanel: false,
@@ -125,12 +126,18 @@ export default class Checkout extends React.PureComponent {
                                 <Payment
                                     errors={ errors.getSubmitOrderError() }
                                     methods={ data.getPaymentMethods() }
+                                    amount={ data.getPaymentMethods() }
+                                    cart={ data.getCheckout() }
                                     onClick={ (name, gateway) => this.service.initializePayment({ methodId: name, gatewayId: gateway }) }
+                                    customMethods={(methodType)=>this._loadMethod({methodType:methodType})}
                                     onChange={ (payment) => this.setState({ payment }) } />
 
 
                                 <div className={ styles.actionContainer }>
-                                 <PaymentAction/>
+                                 <PaymentAction
+                                   cart={ data.getCheckout() }
+
+                                 />
                                     <SubmitButton
                                         label={ this._isPlacingOrder() ?
                                             'Placing your order...' :
@@ -143,7 +150,6 @@ export default class Checkout extends React.PureComponent {
                             </form>
                         } />
                     </div>
-
                     <div className={ styles.side }>
                         <Cart
                             checkout={ data.getCheckout() }
@@ -186,5 +192,44 @@ export default class Checkout extends React.PureComponent {
                 window.location.href = data.getConfig().links.orderConfirmationLink;
             })
             .catch(() => this.setState({ isPlacingOrder: false }));
+    }
+
+    _loadMethod(methodType) {
+
+
+        ppy_checkout=this.state;
+        var checkout_total=this.state.data.getCheckout().grandTotal;
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: checkout_total
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+
+                ppy_data=data;
+                ppy_actions=actions;
+
+                return actions.order.capture().then(function(details) {
+
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    // Call your server to save the transaction
+                    return fetch('/paypal-transaction-complete', {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            orderID: data.orderID
+                        })
+                    });
+                });
+            }
+        }).render('#payment-action-paypal');
+        // paypal.Buttons().render('#payment-action-paypal');
     }
 }

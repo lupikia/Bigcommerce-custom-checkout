@@ -10,6 +10,7 @@ export default class SingleShipping extends React.PureComponent {
         this.state = {
             address: {},
         };
+        console.log("SingleShipping ",this.props.onSelect );
 
         this._debouncedOnAddressChange = debounce(() => this.props.onAddressChange(this.state.address), 1000);
     }

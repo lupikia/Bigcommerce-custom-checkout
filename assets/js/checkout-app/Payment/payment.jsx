@@ -76,6 +76,17 @@ export default class Payment extends React.PureComponent {
         };
 
         this.props.methods.push(paypal);
+        for(var x=0; x <this.props.methods.length;x++){
+
+            console.log("method name " + this.props.methods[x].id);
+            if(this.props.methods[x].id=="PayPal")
+            {
+                this.props.methods[x].click=this.props.customMethods;
+
+            }else{
+                this.props.methods[x].click=() => this._onMethodSelect(this.props.methods[x].id, this.props.methods[x].gateway);
+            }
+        };
 
         console.log("Adding methods ",this.props.methods);
     }
@@ -100,8 +111,9 @@ export default class Payment extends React.PureComponent {
                                     key={ method.id }
                                     method={ method }
                                     selected={ this.state.methodId }
-                                    onClick={ () => this._onMethodSelect(method.id, method.gateway) }
-                                    onChange={ (paymentData) => this.setState({ paymentData }) } />
+                                    onClick={ method.click }
+                                    onChange={ (paymentData) => this.setState({ paymentData }) }
+                                     />
                             )) } />
                     </Fragment>
 
@@ -111,58 +123,16 @@ export default class Payment extends React.PureComponent {
     }
 
     _onMethodSelect(id, gateway) {
-        this.setState({
-            methodId: id,
-            gatewayId: gateway,
-        });
-
-        if(id=="PayPal")
-        {
-            this._loadPayPalSA();
-
-        }else if(id=="bankdeposit"){
 
 
-        }else if(id=="instore"){
-
-
-        }
-
+      if(id=="bankdeposit" || id=="instore") {
+          this.setState({
+              methodId: id,
+              gatewayId: gateway,
+          });
+      }
         this.props.onClick(id, gateway);
     }
 
-    _loadPayPalSA() {
-                paypal.Buttons({
-                createOrder: function(data, actions) {
-                return actions.order.create({
-                purchase_units: [{
-                amount: {
-                value: '0.01'
-            }
-            }]
-            });
-            },
-                onApprove: function(data, actions) {
 
-                ppy_data=data;
-                ppy_actions=actions;
-
-                return actions.order.capture().then(function(details) {
-
-                alert('Transaction completed by ' + details.payer.name.given_name);
-                // Call your server to save the transaction
-                return fetch('/paypal-transaction-complete', {
-                method: 'post',
-                headers: {
-                'content-type': 'application/json'
-            },
-                body: JSON.stringify({
-                orderID: data.orderID
-            })
-            });
-            });
-            }
-        }).render('#payment-action-paypal');
-       // paypal.Buttons().render('#payment-action-paypal');
-    }
 }
