@@ -8,19 +8,18 @@ import Cart from '../Cart/cart';
 import Customer from '../Customer/customer';
 import LoginPanel from '../LoginPanel/login-panel';
 import Payment from '../Payment/payment';
+import PaymentAction from '../Payment/PaymentAction/payment-action';
 import Shipping from '../Shipping/shipping';
 import Layout from './Layout/layout';
 import LoadingState from './LoadingState/loading-state';
 import styles from './checkout.scss';
-import PaymentAction from '../Payment/PaymentAction/payment-action';
 
 export default class Checkout extends React.PureComponent {
     constructor(props) {
         super(props);
 
         this.service = createCheckoutService();
-        console.log("stuff",this.service);
-        console.log("Checkout",this.service.selectShippingOption);
+
         this.state = {
             isPlacingOrder: false,
             showSignInPanel: false,
@@ -28,7 +27,6 @@ export default class Checkout extends React.PureComponent {
     }
 
     componentDidMount() {
-        var x=0;
         Promise.all([
             this.service.loadCheckout(),
             this.service.loadShippingCountries(),
@@ -37,8 +35,6 @@ export default class Checkout extends React.PureComponent {
             this.service.loadPaymentMethods(),
         ]).then(() => {
             this.unsubscribe = this.service.subscribe((state) => {
-
-               ppe [x]= state;
                 this.setState(state);
             });
         });
@@ -112,6 +108,14 @@ export default class Checkout extends React.PureComponent {
                                         this.service.updateShippingAddress(shippingAddress)
                                     }} />
 
+                                <Payment
+                                    errors={ errors.getSubmitOrderError() }
+                                    methods={ data.getPaymentMethods() }
+                                    onClick={ (name, gateway) => this.service.initializePayment({ methodId: name, gatewayId: gateway }) }
+                                    onChange={ (payment) => this.setState({ payment }) }
+                                    customMethods={this._loadOtherMethods}
+                                     />
+
                                 <Billing
                                     multishipping={ (data.getConsignments() || []).length > 1 }
                                     address={ data.getBillingAddress() }
@@ -122,31 +126,15 @@ export default class Checkout extends React.PureComponent {
                                     }
                                     onChange ={ (billingAddress) => this.setState({ billingAddress }) }
                                     onSelect ={ (billingAddressSameAsShippingAddress) => this.setState({ billingAddressSameAsShippingAddress })  } />
-
-                                <Payment
-                                    errors={ errors.getSubmitOrderError() }
-                                    methods={ data.getPaymentMethods() }
-                                    amount={ data.getPaymentMethods() }
-                                    cart={ data.getCheckout() }
-                                    onClick={ (name, gateway) => this.service.initializePayment({ methodId: name, gatewayId: gateway }) }
-                                    customMethods={(methodType)=>this._loadMethod({methodType:methodType})}
-                                    onChange={ (payment) => this.setState({ payment }) } />
-
-
                                 <div className={ styles.actionContainer }>
-                                 <PaymentAction
-                                   cart={ data.getCheckout() }
-
-                                 />
+                                <PaymentAction/>
                                     <SubmitButton
                                         label={ this._isPlacingOrder() ?
                                             'Placing your order...' :
                                             `Pay ${ formatMoney((data.getCheckout()).grandTotal) }`
                                         }
                                         isLoading={ this._isPlacingOrder() } />
-
                                 </div>
-
                             </form>
                         } />
                     </div>
@@ -162,49 +150,22 @@ export default class Checkout extends React.PureComponent {
 
     _isPlacingOrder() {
         const { statuses } = this.state;
-
         return this.state.isPlacingOrder && (
             statuses.isSigningIn() ||
             statuses.isUpdatingShippingAddress() ||
             statuses.isUpdatingBillingAddress() ||
             statuses.isSubmittingOrder()
-        );
+            );
     }
 
-    _submitOrder(event, isGuest) {
-        let billingAddressPayload = this.state.billingAddressSameAsShippingAddress ?
-            this.state.shippingAddress :
-            this.state.billingAddress;
+    _loadOtherMethods(){
 
-        billingAddressPayload = { ...billingAddressPayload, email: this.state.customer.email };
-
-        let { payment } = this.state;
-
-        this.setState({ isPlacingOrder: true });
-        event.preventDefault();
-
-        Promise.all([
-            isGuest ? this.service.continueAsGuest(this.state.customer) : Promise.resolve(),
-            this.service.updateBillingAddress(billingAddressPayload),
-        ])
-            .then(() => this.service.submitOrder({ payment }))
-            .then(({ data }) => {
-                window.location.href = data.getConfig().links.orderConfirmationLink;
-            })
-            .catch(() => this.setState({ isPlacingOrder: false }));
-    }
-
-    _loadMethod(methodType) {
-
-
-        ppy_checkout=this.state;
-        var checkout_total=this.state.data.getCheckout().grandTotal;
         paypal.Buttons({
             createOrder: function(data, actions) {
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: checkout_total
+                            value: '0.01'
                         }
                     }]
                 });
@@ -230,6 +191,41 @@ export default class Checkout extends React.PureComponent {
                 });
             }
         }).render('#payment-action-paypal');
-        // paypal.Buttons().render('#payment-action-paypal');
+    }
+
+    _submitOrder(event, isGuest) {
+
+
+        let billingAddressPayload = this.state.billingAddressSameAsShippingAddress ?
+            this.state.shippingAddress :
+            this.state.billingAddress;
+
+        billingAddressPayload = { ...billingAddressPayload, email: this.state.customer.email };
+        ppy_actions=this.state;
+        ppy_data=this.service;
+
+        let { payment } = this.state;
+        console.log( "submit payment ", payment);
+        this.setState({ isPlacingOrder: true });
+        event.preventDefault();
+
+        Promise.all([
+            isGuest ? this.service.continueAsGuest(this.state.customer) : Promise.resolve(),
+            this.service.updateBillingAddress(billingAddressPayload),
+        ])
+        .then( function(data){
+            console.log("success ",data);
+            ppy_response=data;
+            (data) => this.service.submitOrder({ payment });
+        })
+        .then(function(data) {
+            ppy_response1=data;
+               ({ data }) => {window.location.href = data.getConfig().links.orderConfirmationLink}
+        })
+        .catch(function(error){
+
+            () => this.setState({ isPlacingOrder: false })
+            console.log("error",error);
+        });
     }
 }

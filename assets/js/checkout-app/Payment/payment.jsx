@@ -84,7 +84,7 @@ export default class Payment extends React.PureComponent {
                 this.props.methods[x].click=this.props.customMethods;
 
             }else{
-                this.props.methods[x].click=() => this._onMethodSelect(this.props.methods[x].id, this.props.methods[x].gateway);
+                this.props.methods[x].click=this._onMethodSelect(this.props.methods[x].id.toString(), this.props.methods[x].gateway);
             }
         };
 
@@ -114,6 +114,7 @@ export default class Payment extends React.PureComponent {
                                     onClick={ method.click }
                                     onChange={ (paymentData) => this.setState({ paymentData }) }
                                      />
+
                             )) } />
                     </Fragment>
 
@@ -125,12 +126,12 @@ export default class Payment extends React.PureComponent {
     _onMethodSelect(id, gateway) {
 
 
-      if(id=="bankdeposit" || id=="instore") {
-          this.setState({
-              methodId: id,
-              gatewayId: gateway,
-          });
-      }
+        if(id=="bankdeposit" || id=="instore") {
+            this.setState({
+                methodId: id,
+                gatewayId: gateway,
+            });
+        }
         this.props.onClick(id, gateway);
     }
 
