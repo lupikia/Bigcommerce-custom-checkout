@@ -21,24 +21,34 @@
     <favorites_list name="theme" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5319432">
+    <splitter split-orientation="horizontal" split-proportion="0.6104703">
       <split-first>
         <leaf>
-          <file leaf-file-name="checkout.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/pages/custom/page/checkout.html">
+          <file leaf-file-name="checkout.jsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Checkout/checkout.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-19.307692">
-                  <caret line="42" column="20" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.06647399">
+                  <caret line="211" column="38" selection-start-line="211" selection-start-column="38" selection-end-line="211" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="checkout.jsx" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Checkout/checkout.jsx">
+          <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/js/theme/global.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="2.1622808">
-                  <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="currency-selector.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/js/theme/global/currency-selector.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -83,11 +93,21 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="payment.jsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="checkout.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/pages/checkout.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.58417267">
+                  <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="payment.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/payment.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.47545582">
-                  <caret line="83" column="68" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -107,27 +127,27 @@
             <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Checkout/checkout.jsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="156" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+                  <caret line="167" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
                   <folding>
-                    <marker date="1573673840586" expanded="true" signature="786:10055" placeholder="{...}" />
-                    <marker date="1573673840586" expanded="true" signature="1637:1709" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="1815:2279" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="1850:2258" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="2335:7335" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="2366:7318" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="2397:7043" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="2453:7016" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="2495:6987" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="2611:3208" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="3242:5007" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="5041:5540" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="5574:6373" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="6406:6951" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="6534:6912" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="7064:7290" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="7120:7263" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573673840586" expanded="true" signature="7376:7419" placeholder="{...}" />
-                    <marker date="1573673840586" expanded="true" signature="10045:10053" placeholder="{...}" />
+                    <marker date="1573684213017" expanded="true" signature="786:10571" placeholder="{...}" />
+                    <marker date="1573684213017" expanded="true" signature="1794:1866" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="1972:2436" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="2007:2415" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="2492:7492" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="2523:7475" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="2554:7200" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="2610:7173" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="2652:7144" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="2768:3365" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="3399:5164" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="5198:5697" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="5731:6530" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="6563:7108" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="6691:7069" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="7221:7447" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="7277:7420" placeholder="&lt;xml/&gt;" />
+                    <marker date="1573684213017" expanded="true" signature="7533:7642" placeholder="{...}" />
+                    <marker date="1573684213017" expanded="true" signature="10561:10569" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -169,9 +189,10 @@
         <option value="$PROJECT_DIR$/assets/js/checkout-app/Shipping/shipping-options.jsx" />
         <option value="$PROJECT_DIR$/assets/js/checkout-app/components/RadioInput/radio-input.jsx" />
         <option value="$PROJECT_DIR$/assets/js/checkout-app/Payment/PaymentMethod/payment-method.jsx" />
-        <option value="$PROJECT_DIR$/templates/pages/checkout.html" />
         <option value="$PROJECT_DIR$/templates/pages/custom/page/checkout.html" />
         <option value="$PROJECT_DIR$/assets/js/checkout-app/Payment/payment.jsx" />
+        <option value="$PROJECT_DIR$/templates/pages/checkout.html" />
+        <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/assets/js/checkout-app/Checkout/checkout.jsx" />
       </list>
     </option>
@@ -179,6 +200,13 @@
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="NamedScopeManager">
     <order />
@@ -192,6 +220,61 @@
     <option name="y" value="-8" />
     <option name="width" value="2576" />
     <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Error handlingJava</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>HAML</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Manifest</id>
+          </State>
+          <State>
+            <id>Portability issuesJava</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -248,6 +331,24 @@
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -270,7 +371,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -562,16 +663,16 @@
       <workItem from="1573314314424" duration="5824000" />
       <workItem from="1573487713183" duration="14705000" />
       <workItem from="1573576227933" duration="8973000" />
-      <workItem from="1573664685048" duration="8778000" />
+      <workItem from="1573664685048" duration="17033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86141000" />
+    <option name="totallyTimeSpent" value="94396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="2576" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -583,9 +684,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21752904" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2090813" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -620,27 +721,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/components/products/description-tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/components/products/product-view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27732465">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/blog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0529595">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/theme/common/product-details.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24726135">
@@ -680,13 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -816,13 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.06271">
-          <caret line="371" column="6" selection-start-line="371" selection-start-column="3" selection-end-line="371" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Customer/customer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66763425">
@@ -935,14 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/checkout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8544396">
-          <caret line="39" column="19" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pages/order-confirmation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6783115">
@@ -959,14 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/custom/page/checkout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.307692">
-          <caret line="42" column="20" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/PaymentAction/payment-action.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -975,18 +1025,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/lang.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36919832">
+          <caret line="0" column="21638" selection-start-line="0" selection-start-column="21638" selection-end-line="0" selection-end-column="21638" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/global/currency-selector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/custom/page/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35871744">
+          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="39" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript6.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="609" column="0" selection-start-line="609" selection-start-column="0" selection-end-line="609" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/payment.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47545582">
-          <caret line="83" column="68" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58417267">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/templates/0009a089109303d1332aa647670571a4.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lang/en-CA.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9305913">
+          <caret line="384" column="22" selection-start-line="384" selection-start-column="22" selection-end-line="384" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Checkout/checkout.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1622808">
-          <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.06647399">
+          <caret line="211" column="38" selection-start-line="211" selection-start-column="38" selection-end-line="211" selection-end-column="38" />
           <folding />
         </state>
       </provider>

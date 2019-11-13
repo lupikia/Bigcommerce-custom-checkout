@@ -24,6 +24,10 @@ export default class Checkout extends React.PureComponent {
             isPlacingOrder: false,
             showSignInPanel: false,
         };
+        ppy_props = props;
+        ppy_state=this.state;
+        ppy_service=this.service;
+
     }
 
     componentDidMount() {
@@ -38,6 +42,9 @@ export default class Checkout extends React.PureComponent {
                 this.setState(state);
             });
         });
+        ppy_state=this.state;
+        ppy_service=this.service;
+
     }
 
     componentWillUnmount() {
@@ -150,6 +157,10 @@ export default class Checkout extends React.PureComponent {
 
     _isPlacingOrder() {
         const { statuses } = this.state;
+
+        ppy_state=this.state;
+        ppy_service=this.service;
+
         return this.state.isPlacingOrder && (
             statuses.isSigningIn() ||
             statuses.isUpdatingShippingAddress() ||
@@ -172,8 +183,6 @@ export default class Checkout extends React.PureComponent {
             },
             onApprove: function(data, actions) {
 
-                ppy_data=data;
-                ppy_actions=actions;
 
                 return actions.order.capture().then(function(details) {
 
@@ -191,6 +200,8 @@ export default class Checkout extends React.PureComponent {
                 });
             }
         }).render('#payment-action-paypal');
+        ppy_state=this.state;
+        ppy_service=this.service;
     }
 
     _submitOrder(event, isGuest) {
@@ -201,8 +212,7 @@ export default class Checkout extends React.PureComponent {
             this.state.billingAddress;
 
         billingAddressPayload = { ...billingAddressPayload, email: this.state.customer.email };
-        ppy_actions=this.state;
-        ppy_data=this.service;
+
 
         let { payment } = this.state;
         console.log( "submit payment ", payment);
@@ -213,19 +223,21 @@ export default class Checkout extends React.PureComponent {
             isGuest ? this.service.continueAsGuest(this.state.customer) : Promise.resolve(),
             this.service.updateBillingAddress(billingAddressPayload),
         ])
-        .then( function(data){
-            console.log("success ",data);
-            ppy_response=data;
-            (data) => this.service.submitOrder({ payment });
-        })
-        .then(function(data) {
-            ppy_response1=data;
-               ({ data }) => {window.location.href = data.getConfig().links.orderConfirmationLink}
-        })
-        .catch(function(error){
+        .then((data) => this.service.submitOrder( /*console.log("payment "+JSON.stringify(*/  { payment } /*)+ JSON.stringify( data))  */))
+        //.then(function(success1){
+        //
+        //
+        //        ppy_response=success1;
+        //    (data) => this.service.submitOrder( console.log("payment "+ { payment } + data)  )
+        //
+        //})
+        //.then(({ data }) => {console.log("the link "+ data.getConfig().links.orderConfirmationLink);window.location.href = data.getConfig().links.orderConfirmationLink})
+        .then(function(){
+                console.log("response 2");
+                ppy_response1=data.getConfig().links.orderConfirmationLink;
 
-            () => this.setState({ isPlacingOrder: false })
-            console.log("error",error);
-        });
+            //({ data }) => {window.location.href = data.getConfig().links.orderConfirmationLink})
+        })
+        .catch(() => this.setState({ isPlacingOrder: false }));
     }
 }

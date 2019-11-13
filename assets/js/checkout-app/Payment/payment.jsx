@@ -107,13 +107,12 @@ export default class Payment extends React.PureComponent {
                         <RadioContainer
                             label={ 'Payment Method' }
                             body={ this.props.methods.map(method => (
-                                <PaymentMethod
+                              <PaymentMethod
                                     key={ method.id }
                                     method={ method }
                                     selected={ this.state.methodId }
-                                    onClick={ method.click }
-                                    onChange={ (paymentData) => this.setState({ paymentData }) }
-                                     />
+                                    onClick={ () => this._onMethodSelect(method.id, method.gateway) }
+                                    onChange={ (paymentData) => this.setState({ paymentData }) } />
 
                             )) } />
                     </Fragment>
@@ -125,13 +124,10 @@ export default class Payment extends React.PureComponent {
 
     _onMethodSelect(id, gateway) {
 
-
-        if(id=="bankdeposit" || id=="instore") {
             this.setState({
                 methodId: id,
                 gatewayId: gateway,
             });
-        }
         this.props.onClick(id, gateway);
     }
 
