@@ -1,3 +1,4 @@
+
 import React, { Fragment } from 'react';
 import Alert from '../components/Alert/alert';
 import RadioContainer from '../components/RadioContainer/radio-container';
@@ -11,13 +12,16 @@ export default class Payment extends React.PureComponent {
         this.state = {
             paymentData: {},
             methodId: null,
-            gatewayId: null,
+            gatewayId: null
         };
         this.addPaypalSA();
-        console.log("pay methods ",this.props);
     }
 
+    componentDidMount() {
 
+
+
+    }
     addPaypalSA(){
         var paypal= {
             clientToken:null,
@@ -76,17 +80,17 @@ export default class Payment extends React.PureComponent {
         };
 
         this.props.methods.push(paypal);
-        for(var x=0; x <this.props.methods.length;x++){
-
-            console.log("method name " + this.props.methods[x].id);
-            if(this.props.methods[x].id=="PayPal")
-            {
-                this.props.methods[x].click=this.props.customMethods;
-
-            }else{
-                this.props.methods[x].click=this._onMethodSelect(this.props.methods[x].id.toString(), this.props.methods[x].gateway);
-            }
-        };
+        //for(var x=0; x <this.props.methods.length;x++){
+        //
+        //    console.log("method name " + this.props.methods[x].id);
+        //    if(this.props.methods[x].id=="PayPal")
+        //    {
+        //        this.props.methods[x].click=this._onMethodSelect(this.props.methods[x].id.toString(), this.props.methods[x].gateway);
+        //
+        //    }else{
+        //        this.props.methods[x].click=this._onMethodSelect(this.props.methods[x].id.toString(), this.props.methods[x].gateway);
+        //    }
+        //};
 
         console.log("Adding methods ",this.props.methods);
     }
@@ -107,7 +111,7 @@ export default class Payment extends React.PureComponent {
                         <RadioContainer
                             label={ 'Payment Method' }
                             body={ this.props.methods.map(method => (
-                              <PaymentMethod
+                                <PaymentMethod
                                     key={ method.id }
                                     method={ method }
                                     selected={ this.state.methodId }
@@ -126,9 +130,10 @@ export default class Payment extends React.PureComponent {
 
             this.setState({
                 methodId: id,
-                gatewayId: gateway,
+                gatewayId: gateway
             });
-        this.props.onClick(id, gateway);
+        $("#payment-action-paypal").html("");
+        //this.props.onClick(id, gateway);
     }
 
 

@@ -24,10 +24,6 @@ export default class Checkout extends React.PureComponent {
             isPlacingOrder: false,
             showSignInPanel: false,
         };
-        ppy_props = props;
-        ppy_state=this.state;
-        ppy_service=this.service;
-
     }
 
     componentDidMount() {
@@ -81,7 +77,7 @@ export default class Checkout extends React.PureComponent {
                 <Fragment>
                     <div className={ styles.body }>
                         <Panel body={
-                            <form onSubmit={ (event) => this._submitOrder(event, data.getCustomer().isGuest) }>
+                            <form onSubmit={ (event) => this._loadOtherMethods(event, data.getCustomer().isGuest) }>
                                 <Customer
                                     customer={ data.getCustomer() }
                                     billingAddress={ data.getBillingAddress() }
@@ -169,75 +165,110 @@ export default class Checkout extends React.PureComponent {
             );
     }
 
-    _loadOtherMethods(){
+    _loadOtherMethods(event, isGuest)
+    {
 
-        paypal.Buttons({
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '0.01'
-                        }
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-
-
-                return actions.order.capture().then(function(details) {
-
-                    alert('Transaction completed by ' + details.payer.name.given_name);
-                    // Call your server to save the transaction
-                    return fetch('/paypal-transaction-complete', {
-                        method: 'post',
-                        headers: {
-                            'content-type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            orderID: data.orderID
-                        })
-                    });
-                });
-            }
-        }).render('#payment-action-paypal');
-        ppy_state=this.state;
-        ppy_service=this.service;
-    }
-
-    _submitOrder(event, isGuest) {
-
-
-        let billingAddressPayload = this.state.billingAddressSameAsShippingAddress ?
-            this.state.shippingAddress :
-            this.state.billingAddress;
-
-        billingAddressPayload = { ...billingAddressPayload, email: this.state.customer.email };
-
-
-        let { payment } = this.state;
-        console.log( "submit payment ", payment);
-        this.setState({ isPlacingOrder: true });
         event.preventDefault();
+        var internal = this;
+        //clear method area
+        $("#payment-action-paypal").html("");
+        var temp_cart = this.state.data.getCart();
 
-        Promise.all([
-            isGuest ? this.service.continueAsGuest(this.state.customer) : Promise.resolve(),
-            this.service.updateBillingAddress(billingAddressPayload),
-        ])
-        .then((data) => this.service.submitOrder( /*console.log("payment "+JSON.stringify(*/  { payment } /*)+ JSON.stringify( data))  */))
-        //.then(function(success1){
-        //
-        //
-        //        ppy_response=success1;
-        //    (data) => this.service.submitOrder( console.log("payment "+ { payment } + data)  )
-        //
-        //})
-        //.then(({ data }) => {console.log("the link "+ data.getConfig().links.orderConfirmationLink);window.location.href = data.getConfig().links.orderConfirmationLink})
-        .then(function(){
-                console.log("response 2");
-                ppy_response1=data.getConfig().links.orderConfirmationLink;
+        if(this.state.payment.methodId=="PayPal"){
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: temp_cart.cartAmount
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
 
-            //({ data }) => {window.location.href = data.getConfig().links.orderConfirmationLink})
-        })
-        .catch(() => this.setState({ isPlacingOrder: false }));
+                        internal._submitOrder(isGuest,details,function(sucess){
+
+                            if(sucess.status)
+                            {
+                                //success redirect
+
+                            }else{
+                                //error message
+                            }
+                        });
+                    });
+                }
+            }).render('#payment-action-paypal');
+        }else{
+
+            internal._submitOrder(isGuest,[],function(sucess){
+
+                if(sucess.status)
+                {
+                    //success redirect
+
+
+                }else{
+                    //error message
+                }
+            });
+        }
     }
+
+    _submitOrder(isGuest,details,callback ) {
+
+        this.setState({ isPlacingOrder: true });
+        var checkout = this.state.data.getCart();
+        var products =[];
+        checkout.lineItems.physicalItems.forEach(function(item){
+
+            var temp_data =[
+                {
+                    "name": item.name,
+                    "quantity": item.quantity,
+                    "price_inc_tax": item.extendedListPrice,
+                    "price_ex_tax": item.extendedSalePrice
+                },
+                {
+                    "product_id": item.productId,
+                    "product_options": []
+                }
+            ];
+
+            products.push(temp_data);
+        });
+        var cust_id=0;
+        if(checkout.hasOwnProperty("customerId"))
+        {
+            cust_id = checkout.customerId;
+        }
+
+        var posting_data={
+            status_id:0,
+            customer_id:cust_id,
+            billing_address:this.state.billingAddress ,
+            shipping_addresses:this.state.shippingAddress ,
+            products:products
+        };
+
+        var temp_data={"store_data":posting_data,"proc":"d8e9b5d8",transaction:details};
+        //making request to api
+        $.ajax({
+            url:'http://www.store.localhost.com:8012/api.php',
+            type: 'post',
+            data:JSON.stringify(temp_data),
+            success: function(data)
+            {
+                console.log( "ajax response " + data);
+                callback( data);
+            },
+            error: function(error)
+            {
+                console.log( "error ewsponse " +   JSON.stringify( error));
+                callback( error);
+            }
+        });
+}
 }

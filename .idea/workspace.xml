@@ -21,34 +21,104 @@
     <favorites_list name="theme" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6104703">
+    <splitter split-orientation="horizontal" split-proportion="0.5280636">
       <split-first>
         <leaf>
-          <file leaf-file-name="checkout.jsx" pinned="false" current-in-tab="true">
+          <file leaf-file-name="checkout.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Checkout/checkout.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.06647399">
-                  <caret line="211" column="38" selection-start-line="211" selection-start-column="38" selection-end-line="211" selection-end-column="38" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="252" column="29" selection-start-line="252" selection-start-column="29" selection-end-line="252" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/js/theme/global.js">
+          <file leaf-file-name="2f88ef0c56a6d22b7c8b113037938f18.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/parsed/templates/2f88ef0c56a6d22b7c8b113037938f18.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="216.56863">
+                  <caret line="0" column="94831" selection-start-line="0" selection-start-column="94831" selection-end-line="0" selection-end-column="94831" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="category.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/pages/category.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-7.4615383">
+                  <caret line="70" column="15" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+                  <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="currency-selector.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/js/theme/global/currency-selector.js">
+          <file leaf-file-name="order-confirmation.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/pages/order-confirmation.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.61041296">
+                  <caret line="29" column="39" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="39" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="webpack.prod.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webpack.prod.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="payment-method.jsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/PaymentMethod/payment-method.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="shipping.jsx" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Shipping/shipping.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+                  <folding>
+                    <marker date="1572978350600" expanded="true" signature="530:2413" placeholder="&lt;xml/&gt;" />
+                    <marker date="1572978350600" expanded="true" signature="584:2396" placeholder="&lt;xml/&gt;" />
+                    <marker date="1572978350600" expanded="true" signature="754:928" placeholder="&lt;xml/&gt;" />
+                    <marker date="1572978350600" expanded="true" signature="1048:1679" placeholder="&lt;xml/&gt;" />
+                    <marker date="1572978350600" expanded="true" signature="1706:2346" placeholder="&lt;xml/&gt;" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="checkout.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/pages/checkout.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="1.2064632">
+                  <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -66,48 +136,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".stencil" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.stencil">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.862069">
-                  <caret line="10" column="38" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="38" />
-                  <folding />
-                </state>
-              </provider>
-              <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="shipping.jsx" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Shipping/shipping.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="checkout.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/pages/checkout.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.58417267">
-                  <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="payment.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/payment.jsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+                  <caret line="41" column="23" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -127,27 +160,24 @@
             <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Checkout/checkout.jsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="167" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+                  <caret line="133" column="30" selection-start-line="133" selection-start-column="30" selection-end-line="133" selection-end-column="30" />
                   <folding>
-                    <marker date="1573684213017" expanded="true" signature="786:10571" placeholder="{...}" />
-                    <marker date="1573684213017" expanded="true" signature="1794:1866" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="1972:2436" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="2007:2415" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="2492:7492" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="2523:7475" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="2554:7200" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="2610:7173" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="2652:7144" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="2768:3365" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="3399:5164" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="5198:5697" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="5731:6530" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="6563:7108" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="6691:7069" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="7221:7447" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="7277:7420" placeholder="&lt;xml/&gt;" />
-                    <marker date="1573684213017" expanded="true" signature="7533:7642" placeholder="{...}" />
-                    <marker date="1573684213017" expanded="true" signature="10561:10569" placeholder="{...}" />
+                    <marker date="1574379300747" expanded="true" signature="1702:1774" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="1880:2344" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="1915:2323" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="2400:7405" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="2431:7388" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="2462:7113" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="2518:7086" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="2560:7057" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="2681:3278" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="3312:5077" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="5111:5610" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="5644:6443" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="6476:7021" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="7134:7360" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="7190:7333" placeholder="&lt;xml/&gt;" />
+                    <marker date="1574379300747" expanded="true" signature="9361:11009" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -179,7 +209,6 @@
         <option value="$PROJECT_DIR$/assets/js/theme/common/product-details.js" />
         <option value="$PROJECT_DIR$/templates/pages/product.html" />
         <option value="$PROJECT_DIR$/assets/js/theme/checkout.js" />
-        <option value="$PROJECT_DIR$/.stencil" />
         <option value="$PROJECT_DIR$/webpack.common.js" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/templates/layout/base.html" />
@@ -190,10 +219,11 @@
         <option value="$PROJECT_DIR$/assets/js/checkout-app/components/RadioInput/radio-input.jsx" />
         <option value="$PROJECT_DIR$/assets/js/checkout-app/Payment/PaymentMethod/payment-method.jsx" />
         <option value="$PROJECT_DIR$/templates/pages/custom/page/checkout.html" />
-        <option value="$PROJECT_DIR$/assets/js/checkout-app/Payment/payment.jsx" />
-        <option value="$PROJECT_DIR$/templates/pages/checkout.html" />
         <option value="$PROJECT_DIR$/config.json" />
+        <option value="$PROJECT_DIR$/.stencil" />
+        <option value="$PROJECT_DIR$/assets/js/checkout-app/Payment/payment.jsx" />
         <option value="$PROJECT_DIR$/assets/js/checkout-app/Checkout/checkout.jsx" />
+        <option value="$PROJECT_DIR$/templates/pages/checkout.html" />
       </list>
     </option>
   </component>
@@ -299,7 +329,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -328,25 +358,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -363,11 +375,15 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -588,6 +604,16 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -663,16 +689,21 @@
       <workItem from="1573314314424" duration="5824000" />
       <workItem from="1573487713183" duration="14705000" />
       <workItem from="1573576227933" duration="8973000" />
-      <workItem from="1573664685048" duration="17033000" />
+      <workItem from="1573664685048" duration="17731000" />
+      <workItem from="1573750118006" duration="5439000" />
+      <workItem from="1574092479064" duration="3822000" />
+      <workItem from="1574207055326" duration="23000" />
+      <workItem from="1574288431003" duration="9907000" />
+      <workItem from="1574366836638" duration="13202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94396000" />
+    <option name="totallyTimeSpent" value="127487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="2576" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -684,9 +715,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1234375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2090813" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35480464" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -721,55 +752,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/common/product-details.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24726135">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/wishlist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/components/common/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/components/common/breadcrumbs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/cart/shipping-estimator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14804064">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/page-manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/theme/product.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -795,13 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14798695">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -928,11 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1573503764520" expanded="true" signature="-1:-1" placeholder="&lt;xml/&gt;" />
-            <marker date="1573503764520" expanded="true" signature="-1:-1" placeholder="&lt;xml/&gt;" />
-            <marker date="1573503764520" expanded="true" signature="-1:-1" placeholder="&lt;xml/&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -940,10 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-          <folding>
-            <marker date="1572978350524" expanded="true" signature="-1:-1" placeholder="&lt;xml/&gt;" />
-            <marker date="1572978350524" expanded="true" signature="-1:-1" placeholder="&lt;xml/&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -951,17 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="52" />
-          <folding>
-            <marker date="1573504028376" expanded="true" signature="-1:-1" placeholder="&lt;xml/&gt;" />
-            <marker date="1573504028376" expanded="true" signature="-1:-1" placeholder="&lt;xml/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/PaymentMethod/payment-method.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19738752">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="12" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -969,59 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34542817">
           <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.stencil">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.862069">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13057671">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/components/SubmitButton/submit-button.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1572978351395" expanded="true" signature="179:437" placeholder="&lt;xml/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/order-confirmation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6783115">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Shipping/shipping.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/PaymentAction/payment-action.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1037,7 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36919832">
           <caret line="0" column="21638" selection-start-line="0" selection-start-column="21638" selection-end-line="0" selection-end-column="21638" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35871744">
           <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="39" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1061,23 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="609" column="0" selection-start-line="609" selection-start-column="0" selection-end-line="609" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/payment.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/checkout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58417267">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,7 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,7 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,14 +982,159 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9305913">
           <caret line="384" column="22" selection-start-line="384" selection-start-column="22" selection-end-line="384" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.stencil">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@bigcommerce/checkout-sdk/dist/checkout-sdk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Shipping/shipping.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+          <folding>
+            <marker date="1572978350600" expanded="true" signature="530:2413" placeholder="&lt;xml/&gt;" />
+            <marker date="1572978350600" expanded="true" signature="584:2396" placeholder="&lt;xml/&gt;" />
+            <marker date="1572978350600" expanded="true" signature="754:928" placeholder="&lt;xml/&gt;" />
+            <marker date="1572978350600" expanded="true" signature="1048:1679" placeholder="&lt;xml/&gt;" />
+            <marker date="1572978350600" expanded="true" signature="1706:2346" placeholder="&lt;xml/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/PaymentAction/payment-action.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/PaymentMethod/payment-method.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Payment/payment.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="23" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@bigcommerce/checkout-sdk/dist/checkout-sdk.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/components/SubmitButton/submit-button.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1572978351395" expanded="true" signature="179:437" placeholder="&lt;xml/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2064632">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/checkout-app/Checkout/checkout.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06647399">
-          <caret line="211" column="38" selection-start-line="211" selection-start-column="38" selection-end-line="211" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="252" column="29" selection-start-line="252" selection-start-column="29" selection-end-line="252" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/templates/2f88ef0c56a6d22b7c8b113037938f18.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="216.56863">
+          <caret line="0" column="94831" selection-start-line="0" selection-start-column="94831" selection-end-line="0" selection-end-column="94831" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4615383">
+          <caret line="70" column="15" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/order-confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61041296">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="39" />
           <folding />
         </state>
       </provider>
