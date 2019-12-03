@@ -5,6 +5,10 @@ import RadioContainer from '../components/RadioContainer/radio-container';
 import RadioInput from '../components/RadioInput/radio-input';
 
 export default class ShippingOptions extends React.PureComponent {
+
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
             <RadioContainer
@@ -31,7 +35,7 @@ export default class ShippingOptions extends React.PureComponent {
                                 name={ 'shippingOption' + this.props.consignmentId }
                                 value={ option.id }
                                 checked={ this.props.selectedOptionId === option.id }
-                                label={ `${ option.description } - ${ formatMoney(option.cost) }` }
+                                label={ `${ option.description } - ${ formatMoney(option.cost,{symbol:this.props.checkout.cart.currency.symbol}) }` }
                                 isLoading={ this.props.isSelectingShippingOption || this.props.isUpdatingShippingAddress }
                                 onChange={ () => this.props.onSelect(option.id) } />
                         )) }

@@ -33,6 +33,7 @@ export default class Consignment extends React.PureComponent {
                 />
                 { this.state.addressId &&
                     <ShippingOptions
+                        cart={ this.props.cart }
                         consignmentId={ this.props.consignment.id }
                         options={ this._getOptions() }
                         selectedOptionId={ this.state.optionId }

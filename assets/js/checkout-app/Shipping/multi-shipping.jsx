@@ -9,6 +9,7 @@ export default class MultiShipping extends React.PureComponent {
             {
                 (this.props.cart.lineItems.physicalItems || []).map((item) => (
                     <Consignment
+                        checkout={ this.props.checkout }
                         key={ item.id }
                         item={ item }
                         addresses={ this.props.customer.addresses || [] }

@@ -6,6 +6,7 @@ export default class SubmitButton extends React.PureComponent {
         return (
             <button
                 type="submit"
+                id="form-submit-button"
                 disabled={ this.props.isLoading }
                 className={ this.props.isLoading ? `${styles.button} ${styles.loadingState}` : styles.button }>
                 { this.props.label }

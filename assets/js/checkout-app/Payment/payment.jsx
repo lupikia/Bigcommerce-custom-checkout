@@ -15,6 +15,8 @@ export default class Payment extends React.PureComponent {
             gatewayId: null
         };
         this.addPaypalSA();
+     //   ppy_order++;
+    //    alert(ppy_order);
     }
 
     componentDidMount() {
@@ -79,7 +81,10 @@ export default class Payment extends React.PureComponent {
             onClick:null
         };
 
-        this.props.methods.push(paypal);
+                this.props.methods.push(paypal);
+
+
+
         //for(var x=0; x <this.props.methods.length;x++){
         //
         //    console.log("method name " + this.props.methods[x].id);
@@ -107,7 +112,6 @@ export default class Payment extends React.PureComponent {
                         { this.props.errors &&
                             <Alert body={ this.props.errors.message } />
                         }
-
                         <RadioContainer
                             label={ 'Payment Method' }
                             body={ this.props.methods.map(method => (
@@ -133,6 +137,7 @@ export default class Payment extends React.PureComponent {
                 gatewayId: gateway
             });
         $("#payment-action-paypal").html("");
+        $("#form-submit-button").show();
         //this.props.onClick(id, gateway);
     }
 

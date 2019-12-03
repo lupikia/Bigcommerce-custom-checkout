@@ -10,8 +10,6 @@ export default class SingleShipping extends React.PureComponent {
         this.state = {
             address: {},
         };
-        console.log("SingleShipping ",this.props.onSelect );
-
         this._debouncedOnAddressChange = debounce(() => this.props.onAddressChange(this.state.address), 1000);
     }
 
@@ -29,6 +27,7 @@ export default class SingleShipping extends React.PureComponent {
                     countries={ this.props.countries }
                     onChange={ (fieldName, address) => this._onChange(fieldName, address) } />
                 <ShippingOptions
+                    checkout={ this.props.checkout }
                     options={ this.props.options }
                     selectedOptionId={ this.props.selectedOptionId }
                     isSelectingShippingOption={ this.props.isSelectingShippingOption() }

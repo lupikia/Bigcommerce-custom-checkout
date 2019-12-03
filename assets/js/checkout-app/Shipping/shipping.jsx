@@ -30,7 +30,7 @@ export default class Shipping extends React.PureComponent {
                         <MultiShipping
                             customer={ this.props.customer }
                             consignments={ this.props.consignments }
-                            cart={ this.props.cart }
+                            checkout={ this.checkout }
                             isUpdatingConsignment={ this.props.isUpdatingConsignment }
                             isCreatingConsignments={ this.props.isCreatingConsignments }
                             isSelectingShippingOption={ this.props.isSelectingShippingOption }
@@ -38,6 +38,7 @@ export default class Shipping extends React.PureComponent {
                             onConsignmentUpdate={ this.props.onConsignmentUpdate }
                         /> :
                         <SingleShipping
+                            checkout={ this.props.checkout }
                             countries={ this.props.countries }
                             address={ this.props.address }
                             onAddressChange={ this.props.onAddressChange }

@@ -13,11 +13,14 @@ import Shipping from '../Shipping/shipping';
 import Layout from './Layout/layout';
 import LoadingState from './LoadingState/loading-state';
 import styles from './checkout.scss';
+import utils from '@bigcommerce/stencil-utils';
+
 
 export default class Checkout extends React.PureComponent {
     constructor(props) {
         super(props);
 
+        console.log(JSON.stringify(props));
         this.service = createCheckoutService();
 
         this.state = {
@@ -33,10 +36,12 @@ export default class Checkout extends React.PureComponent {
             this.service.loadShippingOptions(),
             this.service.loadBillingCountries(),
             this.service.loadPaymentMethods(),
+
         ]).then(() => {
             this.unsubscribe = this.service.subscribe((state) => {
                 this.setState(state);
             });
+            this.service.initializeSpamProtection({ containerId: 'spamProtectionContainer' });
         });
         ppy_state=this.state;
         ppy_service=this.service;
@@ -45,6 +50,7 @@ export default class Checkout extends React.PureComponent {
 
     componentWillUnmount() {
         this.unsubscribe();
+        alert("l");
     }
 
     render() {
@@ -90,7 +96,7 @@ export default class Checkout extends React.PureComponent {
                                 <Shipping
                                     customer={ data.getCustomer() }
                                     consignments={ data.getConsignments() }
-                                    cart={ data.getCart() }
+                                    checkout={ data.getCheckout() }
                                     isUpdatingConsignment={ statuses.isUpdatingConsignment }
                                     isCreatingConsignments={ statuses.isCreatingConsignments }
                                     isUpdatingShippingAddress={ statuses.isUpdatingShippingAddress }
@@ -99,7 +105,7 @@ export default class Checkout extends React.PureComponent {
                                     options={ data.getShippingOptions() }
                                     selectedOptionId={ data.getSelectedShippingOption() ? data.getSelectedShippingOption().id : '' }
                                     isSelectingShippingOption ={ statuses.isSelectingShippingOption }
-                                    onShippingOptionChange={ (optionId) => this.service.selectShippingOption(optionId) }
+                                    onShippingOptionChange={ (optionId) => this._updateShipping(optionId) }
                                     onConsignmentUpdate={ (consignment) => (
                                         consignment.id ?
                                             this.service.updateConsignment(consignment) :
@@ -127,14 +133,14 @@ export default class Checkout extends React.PureComponent {
                                         (this.state.billingAddressSameAsShippingAddress === undefined) ||
                                         this.state.billingAddressSameAsShippingAddress
                                     }
-                                    onChange ={ (billingAddress) => this.setState({ billingAddress }) }
+                                    onChange ={ (billingAddress) => this.setState({ billingAddress })  }
                                     onSelect ={ (billingAddressSameAsShippingAddress) => this.setState({ billingAddressSameAsShippingAddress })  } />
                                 <div className={ styles.actionContainer }>
                                 <PaymentAction/>
                                     <SubmitButton
                                         label={ this._isPlacingOrder() ?
                                             'Placing your order...' :
-                                            `Pay ${ formatMoney((data.getCheckout()).grandTotal) }`
+                                            `Pay`
                                         }
                                         isLoading={ this._isPlacingOrder() } />
                                 </div>
@@ -150,7 +156,12 @@ export default class Checkout extends React.PureComponent {
             } />
         );
     }
+    _updateShipping(optionId){
 
+
+        this.service.selectShippingOption(optionId);
+        $("#payment-action-paypal").html("");
+    }
     _isPlacingOrder() {
         const { statuses } = this.state;
 
@@ -172,48 +183,137 @@ export default class Checkout extends React.PureComponent {
         var internal = this;
         //clear method area
         $("#payment-action-paypal").html("");
-        var temp_cart = this.state.data.getCart();
+
+        var temp_cart = this.state.data.getCheckout().grandTotal;
 
         if(this.state.payment.methodId=="PayPal"){
-            paypal.Buttons({
-                createOrder: function(data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                            amount: {
-                                value: temp_cart.cartAmount
-                            }
-                        }]
-                    });
+
+            var temp_data={
+                "proc": "9b5d8d8e",
+                "token": "2e41c582a87a40ec",
+                "client": "95a63182545940c5",
+                "value":temp_cart };
+            var url ="http://www.store.localhost.com:8012/api.php";
+            if(window.location.host!=="localhost"){
+                url="https://bookmed.co.za/storeapi/api.php";
+            }
+            $.ajax({
+                url:url,
+                type: 'post',
+                crossDomain: true,
+                HEADERS:{'Access-Control-Allow-Origin':'*'},
+                data:JSON.stringify(temp_data),
+                success: function(success) {
+
+
+                    $("#form-submit-button").hide();
+                    var new_value =success.data.exe_rate.toFixed(2);
+                    paypal.Buttons({
+                        createOrder: function (data, actions) {
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: {
+                                        value:new_value
+                                    }
+                                }]
+                            });
+                        },
+                        onApprove: function (data, actions) {
+                            return actions.order.capture().then(function (details) {
+
+                                $("#order-information").show();
+                                $("body").scrollTop();
+                                internal._submitOrder(isGuest, details, function (success) {
+
+                                    if (success.status)
+                                    {
+                                        console.log("Deleting 0");
+                                        var cart_id=internal.state.data.getCart().id;
+                                        $.ajax({
+                                            url:"/api/storefront/carts/"+cart_id,
+                                            type: 'DELETE',
+                                            success: function(data)
+                                            {
+                                                //change pop info
+                                                $("#customer-name").text(internal.state.shippingAddress.firstName);
+                                                $("#order").text(success.data.id);
+
+                                                $("#confirmation-order").show();
+                                            },
+                                            error: function(error)
+                                            {
+                                                console.log("Deleting 2",error);
+                                            }
+                                        });
+
+                                    } else {
+                                        //error message
+                                    }
+                                });
+                            });
+                        }
+                    }).render('#payment-action-paypal');
                 },
-                onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(details) {
-
-                        internal._submitOrder(isGuest,details,function(sucess){
-
-                            if(sucess.status)
-                            {
-                                //success redirect
-
-                            }else{
-                                //error message
-                            }
-                        });
-                    });
+                error: function(error)
+                {
+                    console.log( "error ewsponse " +   JSON.stringify( error));
                 }
-            }).render('#payment-action-paypal');
+
+            });
         }else{
 
-            internal._submitOrder(isGuest,[],function(sucess){
+          //configuration payment methods by store
 
-                if(sucess.status)
-                {
-                    //success redirect
+            //let billingAddressPayload = this.state.billingAddressSameAsShippingAddress ?
+            //    this.state.shippingAddress :
+            //    this.state.billingAddress;
+            //
+            //billingAddressPayload = { ...billingAddressPayload, email: this.state.customer.email };
+            //
+            //let {payment} = this.state;
+            //this.setState({ isPlacingOrder: true });
+            //event.preventDefault();
+            //
+            //Promise.all([
+            //    isGuest ? this.service.continueAsGuest(this.state.customer) : Promise.resolve(),
+            //    this.service.updateBillingAddress(billingAddressPayload),
+            //])
+            //.then(function(){
+            //    internal.service.submitOrder({ payment }) ;
+            //    console.log("redirecting 1");
+            //    window.location = "/order-confirmation";
+            //} )
+            //.then(({ data }) => {
+            //
+            //    console.log("redirecting  2");
+            //    window.location = "/order-confirmation";
+            //})
+            //.catch(function() {
+            //    console.log("redirecting 3");
+            //    ppy_response2=internal;
+            //    window.location = "/order-confirmation";
+            //      internal.setState({isPlacingOrder: false})
+            //});
+            let billingAddressPayload = this.state.billingAddressSameAsShippingAddress ?
+                this.state.shippingAddress :
+                this.state.billingAddress;
 
+            billingAddressPayload = { ...billingAddressPayload, email: this.state.customer.email };
 
-                }else{
-                    //error message
-                }
-            });
+            let { payment } = this.state;
+
+            this.setState({ isPlacingOrder: true });
+            event.preventDefault();
+
+            Promise.all([
+                isGuest ? this.service.continueAsGuest(this.state.customer) : Promise.resolve(),
+                this.service.updateBillingAddress(billingAddressPayload),
+            ])
+                .then(() => this.service.submitOrder({ payment }))
+                .then(({ data }) => {
+                    window.location.href = data.getConfig().links.orderConfirmationLink;
+                })
+                .catch(() => this.setState({ isPlacingOrder: false }));
         }
     }
 
@@ -224,40 +324,49 @@ export default class Checkout extends React.PureComponent {
         var products =[];
         checkout.lineItems.physicalItems.forEach(function(item){
 
-            var temp_data =[
+
+            products.push(
                 {
+                    "product_id": item.productId,
                     "name": item.name,
                     "quantity": item.quantity,
                     "price_inc_tax": item.extendedListPrice,
                     "price_ex_tax": item.extendedSalePrice
-                },
+                }/*,
                 {
                     "product_id": item.productId,
                     "product_options": []
-                }
-            ];
-
-            products.push(temp_data);
+                }*/);
         });
         var cust_id=0;
         if(checkout.hasOwnProperty("customerId"))
         {
             cust_id = checkout.customerId;
         }
-
+        this.state.billingAddress.email=this.state.customer.email;
+        this.state.shippingAddress.email=this.state.customer.email;
         var posting_data={
             status_id:0,
             customer_id:cust_id,
             billing_address:this.state.billingAddress ,
-            shipping_addresses:this.state.shippingAddress ,
+            shipping_addresses:[this.state.shippingAddress] ,
             products:products
         };
-
+        this.service.updateBillingAddress(this.state.shippingAddress.email);
         var temp_data={"store_data":posting_data,"proc":"d8e9b5d8",transaction:details};
+
+        ppy_state=this.state;
+        ppy_service=this.service;
+
         //making request to api
+        var url ="http://www.store.localhost.com:8012/api.php";
+        if(window.location.host!=="localhost"){
+            url="https://bookmed.co.za/storeapi/api.php";
+        }
         $.ajax({
-            url:'http://www.store.localhost.com:8012/api.php',
+            url:url,
             type: 'post',
+            HEADERS:{'Access-Control-Allow-Origin':'*'},
             data:JSON.stringify(temp_data),
             success: function(data)
             {

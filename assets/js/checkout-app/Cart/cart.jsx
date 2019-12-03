@@ -4,7 +4,16 @@ import ItemLine from "./ItemLine/item-line";
 import styles from './cart.scss';
 
 export default class Cart extends React.PureComponent {
+
+    constructor(props) {
+        super(props);
+
+        console.log("subtotal " ,props );
+    }
+
     render() {
+
+
         return (
             <div className={ styles.container }>
                 <div className={ styles.cartContainer }>
@@ -23,24 +32,24 @@ export default class Cart extends React.PureComponent {
                             <ItemLine
                                 key={ item.id }
                                 label={ `${ item.quantity } x ${ item.name }` }
-                                amount={ formatMoney(item.extendedSalePrice) }
+                                amount={ formatMoney(item.extendedSalePrice,{ symbol: this.props.checkout.cart.currency.symbol}) }
                                 imageUrl={ item.imageUrl }/>
                         ))
                     )) }
                 </div>
 
-                <div className={ styles.orderSummaryContainer }>
+                <div className={ styles.orderSummaryContainer  }>
                     <ItemLine
                         label={ 'Subtotal' }
-                        amount={ formatMoney(this.props.checkout.subtotal) } />
+                        amount={ formatMoney(this.props.checkout.cart.baseAmount,{ symbol: this.props.checkout.cart.currency.symbol}) } />
 
                     <ItemLine
                         label={ 'Shipping' }
-                        amount={ formatMoney(this.props.checkout.shippingCostTotal) } />
+                        amount={ formatMoney(this.props.checkout.shippingCostTotal,{ symbol: this.props.checkout.cart.currency.symbol}) } />
 
                     <ItemLine
                         label={ 'Tax' }
-                        amount={ formatMoney(this.props.checkout.taxTotal) } />
+                        amount={ formatMoney(this.props.checkout.taxTotal,{ symbol: this.props.checkout.cart.currency.symbol}) } />
 
                     <div className={ styles.grandTotalContainer }>
                         <div className={ styles.grandTotalLabel }>
@@ -48,7 +57,7 @@ export default class Cart extends React.PureComponent {
                         </div>
 
                         <div className={ styles.grandTotalAmount }>
-                            { formatMoney(this.props.checkout.grandTotal) }
+                            { formatMoney(this.props.checkout.grandTotal,{ symbol: this.props.checkout.cart.currency.symbol}) }
                         </div>
                     </div>
                 </div>

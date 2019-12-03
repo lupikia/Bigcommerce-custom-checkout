@@ -36,6 +36,7 @@ const pageClasses = {
     cart: () => import('./theme/cart'),
     category: () => import('./theme/category'),
     checkout: () => import('./theme/checkout'),
+    confirmedOrder: () => import('./theme/confirmed-order'),
     compare: () => import('./theme/compare'),
     page_contact_form: () => import('./theme/contact-us'),
     error: noop,
@@ -110,4 +111,9 @@ window.initReact = function initReact() {
         React.createElement(Checkout, null, null),
         document.getElementById('checkout-app')
     );
+
+    //ReactDOM.render(
+    //    React.createElement(Checkout, null, null),
+    //    document.getElementById('confirmed-order-app')
+    //);
 };
