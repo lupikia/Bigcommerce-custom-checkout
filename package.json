@@ -22,7 +22,7 @@
     "jquery.growl": "^1.3.5",
     "js-cookie": "^2.2.0",
     "jstree": "vakata/jstree",
-    "lazysizes": "4.1.2",
+    "lazysizes": "5.2.1",
     "lodash": "^4.17.4",
     "nanobar": "^0.4.2",
     "nod-validate": "^2.0.12",
